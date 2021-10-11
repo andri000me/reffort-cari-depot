@@ -1,2 +1,8 @@
 -adan aidan teras
+<<<<<<< HEAD
 -valdi muhammad yunha putra
+=======
+-aldo
+-Tito bahtiar alfuzi
+>>>>>>> 3983ee1190bf190035c27c54952214c05d4c921b
+valdi muhammad (test 2)
