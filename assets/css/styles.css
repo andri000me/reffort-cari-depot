@@ -12384,7 +12384,40 @@ footer.footer {
 	}
 }
 
+.form {
+  display: flex;
+  flex-direction: row;
+}
+.search-field {
+	margin-left: -24;
+  width: 75%;
+  padding: 10px 35px 10px 15px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  font-size: 20;
+}
+
+.search-button {
+  background: transparent;
+  border: none;
+  outline: none;
+  margin-left: -40px;
+}
+
+.search-button img {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+}
+
+
 .how-to-sign-in {
+	background-position: center;
 	background-color: white;
-	padding-left: 10px;
+	width: auto;
+	padding: 5px 5px 5px 10px;
+	margin-left: 230px;
+	margin-bottom: 50px;
+	border-radius: 20px;
 }
