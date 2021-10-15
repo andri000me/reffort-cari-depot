@@ -12347,6 +12347,11 @@ footer.footer {
 	height: 300px;
 }
 
+.image-cs1 {
+	height: 300px;
+}
+
+
 .icon-banner {
 	width: 100px;
 }
@@ -12367,11 +12372,19 @@ footer.footer {
 	.image-usephone {
 		height: 100px;
 	}
+
+	.image-cs1 {
+		height: 100px;
+	}
 }
 
 @media screen and (max-width: 600px) {
 	.image-usephone {
 		display: none;
 	}
+}
 
+.how-to-sign-in {
+	background-color: white;
+	padding-left: 10px;
 }
