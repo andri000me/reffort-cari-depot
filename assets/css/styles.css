@@ -87,6 +87,7 @@ body {
 	background-color: var(--bs-body-bg);
 	-webkit-text-size-adjust: 100%;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	margin-top: 4rem;
 }
 
 hr {
@@ -532,6 +533,8 @@ progress {
 .lead {
 	font-size: 1rem;
 	font-weight: 300;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
 }
 
 .display-1 {
@@ -2277,7 +2280,8 @@ progress {
 .form-control {
 	display: block;
 	width: 100%;
-	padding: 0.75rem 1rem;
+	/* padding: 0.75rem 1rem; */
+	padding: .375rem .75rem;
 	font-size: 1rem;
 	font-weight: 400;
 	line-height: 1.5;
@@ -2340,7 +2344,8 @@ progress {
 }
 
 .form-control::-webkit-file-upload-button {
-	padding: 0.75rem 1rem;
+	/* padding: 0.75rem 1rem; */
+	padding: .375rem .75rem;
 	margin: -0.75rem -1rem;
 	-webkit-margin-end: 1rem;
 	margin-inline-end: 1rem;
@@ -2357,7 +2362,8 @@ progress {
 }
 
 .form-control::file-selector-button {
-	padding: 0.75rem 1rem;
+	/* padding: 0.75rem 1rem; */
+	padding: .375rem .75rem;
 	margin: -0.75rem -1rem;
 	-webkit-margin-end: 1rem;
 	margin-inline-end: 1rem;
@@ -2392,7 +2398,8 @@ progress {
 }
 
 .form-control::-webkit-file-upload-button {
-	padding: 0.75rem 1rem;
+	/* padding: 0.75rem 1rem; */
+	padding: .375rem .75rem;
 	margin: -0.75rem -1rem;
 	-webkit-margin-end: 1rem;
 	margin-inline-end: 1rem;
@@ -2941,7 +2948,8 @@ textarea.form-control-lg {
 .input-group-text {
 	display: flex;
 	align-items: center;
-	padding: 0.75rem 1rem;
+	/* padding: 0.75rem 1rem; */
+	padding: .375rem .75rem;
 	font-size: 1rem;
 	font-weight: 400;
 	line-height: 1.5;
@@ -3229,7 +3237,8 @@ textarea.form-control.is-invalid {
 	user-select: none;
 	background-color: transparent;
 	border: 1px solid transparent;
-	padding: 0.75rem 1rem;
+	/* padding: 0.75rem 1rem; */
+	padding: .375rem .75rem;
 	font-size: 1rem;
 	border-radius: 0.25rem;
 	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -3941,11 +3950,12 @@ fieldset:disabled .btn {
 .btn-link {
 	font-weight: 400;
 	color: #0d6efd;
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 .btn-link:hover {
 	color: #0a58ca;
+	text-decoration: underline;
 }
 
 .btn-link:disabled,
@@ -12247,7 +12257,7 @@ header.masthead {
 	background: url("../images/resource/bg-masthead.jpg") no-repeat center center;
 	background-size: cover;
 	padding-top: 8rem;
-	padding-bottom: 0rem;
+	padding-bottom: 8rem;
 }
 
 header.masthead:before {
@@ -12269,7 +12279,7 @@ header.masthead .h1 {
 @media (min-width: 768px) {
 	header.masthead {
 		padding-top: 8rem;
-		padding-bottom: 8rem;
+		padding-bottom: 0rem;
 	}
 
 	header.masthead h1,
@@ -12304,7 +12314,8 @@ header.masthead .h1 {
 }
 
 .testimonials .testimonial-item img {
-	max-width: 12rem;
+	width: 12rem;
+	height: 12rem;
 	box-shadow: 0px 5px 5px 0px #adb5bd;
 }
 
@@ -12325,7 +12336,7 @@ header.masthead .h1 {
 	width: 100%;
 	top: 0;
 	left: 0;
-	opacity: 0.5;
+	opacity: 0.8;
 }
 
 footer.footer {
@@ -12339,12 +12350,15 @@ footer.footer {
 	margin-bottom: 5px;
 }
 
-.logo-name {
-	font-size: 1.5rem;
+.logo-brand-auth {
+	height: 5rem;
+	margin-right: 5px;
+	margin-bottom: 5px;
+
 }
 
-.image-usephone {
-	height: 300px;
+.logo-name {
+	font-size: 1.5rem;
 }
 
 .icon-banner {
@@ -12363,6 +12377,10 @@ footer.footer {
 	height: 38px;
 }
 
+.image-usephone {
+	height: 230px;
+}
+
 @media screen and (max-width: 900px) {
 	.image-usephone {
 		height: 100px;
@@ -12374,4 +12392,20 @@ footer.footer {
 		display: none;
 	}
 
+}
+
+.footer-list a {
+	text-decoration: none;
+	--bs-text-opacity: 1;
+	color: #6c757d !important;
+}
+
+.footer-list a:hover {
+	text-decoration: none;
+	--bs-text-opacity: 1;
+	color: #4c565e !important;
+}
+
+.min-height-80 {
+	min-height: 80vh;
 }

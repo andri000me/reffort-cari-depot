@@ -11,7 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<meta name="author" content="" />
 	<title>Reffort - Cari Refill Depot</title>
 	<!-- Favicon-->
-	<link rel="icon" type="image/x-icon" href="<?=base_url();?>assets/images/favicon.svg" />
+	<link rel="icon" type="image/x-icon" href="<?=base_url()?>assets/images/favicon.svg" />
 	<!-- Bootstrap icons-->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet"
 		type="text/css" />
@@ -19,19 +19,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
 		type="text/css" />
 	<!-- Core theme CSS (includes Bootstrap)-->
-	<link href="<?=base_url();?>assets/css/styles.css" rel="stylesheet" />
+	<link href="<?=base_url()?>assets/css/styles.css" rel="stylesheet" />
 
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
 		integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
 </head>
 
+<?php
+$uri_1 = $this->uri->segment(1);
+
+?>
+
 <body>
 	<!-- Navigation-->
 	<nav class="navbar navbar-expand-md navbar-light fixed-top bg-white">
 		<div class="container" style="vertical-align:middle">
-			<a class="navbar-brand align-self-center" href="#">
-				<img class="logo-brand" src="<?=base_url();?>assets/images/logo-reffort-cari-depot.svg" alt="">
+			<a class="navbar-brand align-self-center" href="<?=base_url()?>">
+				<img class="logo-brand" src="<?=base_url()?>assets/images/logo-reffort-cari-depot.svg" alt="">
 				<span class="logo-name">Reffort</span>
 			</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
@@ -41,10 +46,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="collapse navbar-collapse" id="navbarCollapse">
 				<ul class="navbar-nav ms-auto mb-2 mb-md-0">
 					<li class="nav-item">
-						<a class="nav-link ms-2 me-2 active" aria-current="page" href="#">Join Us Partner</a>
+						<a class="nav-link ms-2 me-2 <?=$uri_1 == '' ? 'active' : ''?>" href="<?=base_url()?>">Home</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link ms-2 me-2" href="#">Help Center</a>
+						<a class="nav-link ms-2 me-2" aria-current="page" href="<?=base_url()?>">Join Us Partner</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link ms-2 me-2 <?=$uri_1 == 'help-center' ? 'active' : ''?>"
+							href="<?=base_url()?>help-center">Help Center</a>
+					</li>
+					<li class="nav-item ms-2">
+						<a href="<?=base_url()?>customers/login" class="btn btn-outline-primary me-2">Login</a>
+					</li>
+					<li class="nav-item">
+						<a href="<?=base_url()?>customers/register" class="btn btn-primary">Sign-up</a>
 					</li>
 				</ul>
 			</div>
