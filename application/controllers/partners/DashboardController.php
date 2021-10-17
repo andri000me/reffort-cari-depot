@@ -1,10 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class LandingPage extends CI_Controller {
-
+class DashboardController extends CI_Controller {
+ 
 	public function index()
 	{
-		$this->load->view('landing_page');
+		$this->load->view('partners/dashboard.php');
 	}
 }
