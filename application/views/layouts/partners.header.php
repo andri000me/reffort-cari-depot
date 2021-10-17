@@ -33,7 +33,7 @@ $uri_1 = $this->uri->segment(1);
 
 <body>
 	<!-- Navigation-->
-	<nav class="navbar navbar-expand-md navbar-light fixed-top bg-white shadow-sm">
+	<nav class="navbar navbar-expand-md navbar-light fixed-top bg-white">
 		<div class="container" style="vertical-align:middle">
 			<a class="navbar-brand align-self-center" href="<?=base_url()?>">
 				<img class="logo-brand" src="<?=base_url()?>assets/images/logo-reffort-cari-depot.svg" alt="">
@@ -44,54 +44,30 @@ $uri_1 = $this->uri->segment(1);
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarCollapse">
-				<form class="d-flex mx-auto">
-					<div class="input-group form-nav-search">
-						<input class="form-control" type="search" placeholder="Search" aria-label="Search">
-						<button class="btn btn-primary" type="submit">
-							<i class="fas fa-search fa-fw   "></i>
-						</button>
-					</div>
-				</form>
 				<ul class="navbar-nav ms-auto mb-2 mb-md-0">
-					<?php
-						if(empty($this->session->userdata('id'))){
-						
-					?>
 					<li class="nav-item">
-						<a class="nav-link ms-2 me-2 <?=$uri_1 == '' ? 'active' : ''?>" href="<?=base_url()?>">Home</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link ms-2 me-2" aria-current="page" href="<?=base_url()?>">Join Us Partner</a>
+						<a class="nav-link ms-2 me-2 <?=$uri_1 == 'help-center' ? 'active' : ''?>"
+							href="<?=base_url()?>help-center">
+							Dashboard
+						</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link ms-2 me-2 <?=$uri_1 == 'help-center' ? 'active' : ''?>"
-							href="<?=base_url()?>help-center">Help Center</a>
-					</li>
-					<li class="nav-item ms-2">
-						<a href="<?=base_url()?>customers/login" class="btn btn-outline-primary me-2">Login</a>
+							href="<?=base_url()?>help-center">
+							Profile
+						</a>
 					</li>
 					<li class="nav-item">
-						<a href="<?=base_url()?>customers/register" class="btn btn-primary">Sign-up</a>
-					</li>
-					<?php
-						}else{
-					?>
-
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
-							data-bs-toggle="dropdown" aria-expanded="false">
-							<i class="fas fa-user-circle fa-fw fa-lg me-2"></i> <?=$this->session->userdata('name')?>
+						<a class="nav-link ms-2 me-2 <?=$uri_1 == 'help-center' ? 'active' : ''?>"
+							href="<?=base_url()?>help-center">
+							Gallery
 						</a>
-						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="#">
-									<i class="fas fa-sign-out-alt fa-fw"></i> Logout
-								</a>
-							</li>
-						</ul>
 					</li>
-					<?php
-						}
-					?>
+					<li class="nav-item ms-2">
+						<a href="<?=base_url()?>customers/login" class="btn btn-outline-danger me-2">
+							Logout
+						</a>
+					</li>
 				</ul>
 			</div>
 		</div>

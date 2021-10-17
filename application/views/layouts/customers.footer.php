@@ -16,7 +16,7 @@
 				</div>
 			</div>
 			<div class="col-lg-3 mb-5 text-lg-start">
-				<ul class="list-unstyled mb-2">
+				<ul class="list-unstyled mb-2 footer-list">
 					<li class="mb-2"><b>About</b></li>
 					<li class="mb-2"><a href="text-muted">Contact</a></li>
 					<li class="mb-2"><a href="text-muted">Terms of Use</a></li>
