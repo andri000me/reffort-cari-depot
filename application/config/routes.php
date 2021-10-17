@@ -53,10 +53,16 @@ $route['default_controller'] = 'landingpagecontroller';
 $route['help-center'] = 'helpcentercontroller';
 
 // customers
-$route['customers/register'] = 'customers/authcontroller/register';
-$route['customers/login'] = 'customers/authcontroller/login';
+$route['customers/register'] = 'customers/registercontroller/index';
+$route['customers/auth/register'] = 'customers/authcontroller/register';
+$route['customers/login'] = 'customers/logincontroller/index';
+$route['customers/auth/login'] = 'customers/authcontroller/login';
+$route['customers/auth/logout'] = 'customers/authcontroller/logout';
+$route['customers/home'] = 'customers/homecontroller/index';
+
 // partners
 $route['partners/dashboard'] = 'partners/dashboardcontroller/index';
+
 // admins
 
 $route['404_override'] = '';
