@@ -54,13 +54,13 @@ $uri_1 = $this->uri->segment(1);
 					<li class="nav-item">
 						<a class="nav-link ms-2 me-2 <?=$uri_1 == 'help-center' ? 'active' : ''?>"
 							href="<?=base_url()?>help-center">
-							Partners
+							Profile
 						</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link ms-2 me-2 <?=$uri_1 == 'help-center' ? 'active' : ''?>"
 							href="<?=base_url()?>help-center">
-							Users
+							Gallery
 						</a>
 					</li>
 					<li class="nav-item ms-2">

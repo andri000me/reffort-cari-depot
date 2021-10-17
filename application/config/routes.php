@@ -56,6 +56,7 @@ $route['help-center'] = 'helpcenter';
 $route['customers/register'] = 'customers/auth/register';
 $route['customers/login'] = 'customers/auth/login';
 // partners
+$route['partners/dashboard'] = 'partners/dashboard/index';
 // admins
 
 $route['404_override'] = '';
