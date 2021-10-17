@@ -46,20 +46,27 @@ $uri_1 = $this->uri->segment(1);
 			<div class="collapse navbar-collapse" id="navbarCollapse">
 				<ul class="navbar-nav ms-auto mb-2 mb-md-0">
 					<li class="nav-item">
-						<a class="nav-link ms-2 me-2 <?=$uri_1 == '' ? 'active' : ''?>" href="<?=base_url()?>">Home</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link ms-2 me-2" aria-current="page" href="<?=base_url()?>">Join Us Partner</a>
+						<a class="nav-link ms-2 me-2 <?=$uri_1 == 'help-center' ? 'active' : ''?>"
+							href="<?=base_url()?>help-center">
+							Dashboard
+						</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link ms-2 me-2 <?=$uri_1 == 'help-center' ? 'active' : ''?>"
-							href="<?=base_url()?>help-center">Help Center</a>
-					</li>
-					<li class="nav-item ms-2">
-						<a href="<?=base_url()?>customers/login" class="btn btn-outline-primary me-2">Login</a>
+							href="<?=base_url()?>help-center">
+							Profile
+						</a>
 					</li>
 					<li class="nav-item">
-						<a href="<?=base_url()?>customers/register" class="btn btn-primary">Sign-up</a>
+						<a class="nav-link ms-2 me-2 <?=$uri_1 == 'help-center' ? 'active' : ''?>"
+							href="<?=base_url()?>help-center">
+							Gallery
+						</a>
+					</li>
+					<li class="nav-item ms-2">
+						<a href="<?=base_url()?>customers/login" class="btn btn-outline-danger me-2">
+							Logout
+						</a>
 					</li>
 				</ul>
 			</div>

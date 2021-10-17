@@ -140,14 +140,16 @@
 		<div class="row">
 			<div class="col-lg-4">
 				<div class="testimonial-item mx-auto mb-5 mb-lg-0">
-					<img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-1.jpg" alt="..." />
+					<img class="img-fluid rounded-circle mb-3" src="<?=base_url();?>assets/images/testimoni/p1.jpg"
+						alt="..." />
 					<h5>Margaret E.</h5>
 					<p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
 				</div>
 			</div>
 			<div class="col-lg-4">
 				<div class="testimonial-item mx-auto mb-5 mb-lg-0">
-					<img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-2.jpg" alt="..." />
+					<img class="img-fluid rounded-circle mb-3" src="<?=base_url();?>assets/images/testimoni/p2.jpg"
+						alt="..." />
 					<h5>Fred S.</h5>
 					<p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots
 						of super nice landing pages."</p>
@@ -155,7 +157,8 @@
 			</div>
 			<div class="col-lg-4">
 				<div class="testimonial-item mx-auto mb-5 mb-lg-0">
-					<img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-3.jpg" alt="..." />
+					<img class="img-fluid rounded-circle mb-3" src="<?=base_url();?>assets/images/testimoni/p3.jpg"
+						alt="..." />
 					<h5>Sarah W.</h5>
 					<p class="font-weight-light mb-0">"Thanks so much for making these free resources available
 						to us!"</p>
