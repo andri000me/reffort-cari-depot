@@ -27,24 +27,24 @@ $this->load->view("layouts/help.center.header.php")
 
 <!-- Index-->
 <div class="container">
-    <div class="row">
+    <div class="row py-5">
         <div class="col-4">
             <h5>Customer</h5>
-            <ul class="list-group list-group-flush">
+            <ul class="list-group list-group-flush mt-1 mb-3">
                 <li class="list-group-item"><a href="#">How to Sign In</a></li>
                 <li class="list-group-item"><a href="#">I Can't Find Something</a></li>
                 <li class="list-group-item"><a href="#">How to Find Love</a></li>
                 <li class="list-group-item"><a href="#">Refill Depot can't Call</a></li>
             </ul>
             <h5>Partners</h5>
-            <ul class="list-group list-group-flush">
+            <ul class="list-group list-group-flush mt-1 mb-3">
                 <li class="list-group-item"><a href="#">How to Join Us</a></li>
                 <li class="list-group-item"><a href="#">Customers Can't Find</a></li>
             </ul>
         </div>
 
 
-        <div class="col-7">
+        <div class="col-8">
             <div class="card">
                 <div class="card-body">
                     <h4>How to sign in</h4>
