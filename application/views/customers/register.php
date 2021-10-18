@@ -24,33 +24,36 @@
 				</div>
 			</div>
 			<div class="mb-5">
-				<form>
+				<?php 
+				if($this->session->flashdata('error') !='')
+				{
+					echo '<div class="alert alert-danger" role="alert">';
+					echo $this->session->flashdata('error');
+					echo '</div>';
+				}
+				?>
+				<form action="<?=base_url()?>customers/auth/register" method="post">
 					<div class="mb-3">
 						<label for="full_name" class="form-label">Full Name</label>
-						<input type="text" class="form-control" id="full_name">
-						<div class="form-text text-danger">Sample error</div>
+						<input type="text" class="form-control" id="full_name" name="full_name">
 					</div>
 					<div class="mb-3">
 						<label for="email" class="form-label">Email address</label>
-						<input type="email" class="form-control" id="email">
-						<div class="form-text text-danger">Sample error</div>
+						<input type="email" class="form-control" id="email" name="email">
 					</div>
 					<div class="mb-3">
 						<label for="password" class="form-label">Password</label>
-						<input type="password" class="form-control" id="password">
-						<div class="form-text text-danger">Sample error</div>
+						<input type="password" class="form-control" id="password" name="password">
 					</div>
 					<div class="mb-3">
 						<label for="confirm_password" class="form-label">Confirm Password</label>
-						<input type="password" class="form-control" id="confirm_password">
-						<div class="form-text text-danger">Sample error</div>
+						<input type="password" class="form-control" id="confirm_password" name="confirm_password">
 					</div>
 					<div class="mb-3">
-						<label for="phone" class="form-label">Phone Number</label>
-						<input type="text" class="form-control" id="phone">
-						<div class="form-text text-danger">Sample error</div>
+						<label for="phone_number" class="form-label">Phone Number</label>
+						<input type="text" class="form-control" id="phone_number" name="phone_number">
 					</div>
-					<div class="d-grid gap-2">
+					<div class="d-grid gap-2 mt-5">
 						<button type="submit" class="btn btn-primary btn-block">Register</button>
 					</div>
 				</form>
