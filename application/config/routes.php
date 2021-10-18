@@ -62,6 +62,7 @@ $route['customers/home'] = 'customers/homecontroller/index';
 
 // partners
 $route['partners/dashboard'] = 'partners/dashboardcontroller/index';
+$route['partners/license_document'] = 'partners/LicenseDocumentController/index';
 
 // admins
 
