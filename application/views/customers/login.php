@@ -24,6 +24,7 @@
 				</div>
 			</div>
 			<div class="mb-5">
+<<<<<<< HEAD
 				<?php 
 				if($this->session->flashdata('error') !='')
 				{
@@ -51,6 +52,20 @@
 						<input type="password" class="form-control" id="password" name="password">
 					</div>
 					<div class="d-grid gap-2 mt-5">
+=======
+				<form>
+					<div class="mb-3">
+						<label for="email" class="form-label">Email address</label>
+						<input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+						<div class="form-text text-danger">Sample error</div>
+					</div>
+					<div class="mb-3">
+						<label for="password" class="form-label">Password</label>
+						<input type="password" class="form-control" id="password">
+						<div class="form-text text-danger">Sample error</div>
+					</div>
+					<div class="d-grid gap-2">
+>>>>>>> d9785c08694f7459695e0fd18afe15ff74707f79
 						<button type="submit" class="btn btn-primary btn-block">Login</button>
 					</div>
 				</form>

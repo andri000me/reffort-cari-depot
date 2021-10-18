@@ -61,6 +61,7 @@ $uri_1 = $this->uri->segment(1);
 						<a class="nav-link ms-2 me-2 <?=$uri_1 == '' ? 'active' : ''?>" href="<?=base_url()?>">Home</a>
 					</li>
 					<li class="nav-item">
+<<<<<<< HEAD
 						<a class="nav-link ms-2 me-2" aria-current="page" href="<?=base_url()?>">Join Us Partner</a>
 					</li>
 					<li class="nav-item">
@@ -88,6 +89,22 @@ $uri_1 = $this->uri->segment(1);
 								</a>
 							</li>
 						</ul>
+=======
+						<a class="nav-link ms-2 me-2 <?=$uri_1 == '' ? 'active' : ''?>" href="<?=base_url()?>">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link ms-2 me-2" aria-current="page" href="<?=base_url()?>">Join Us Partner</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link ms-2 me-2 <?=$uri_1 == 'help-center' ? 'active' : ''?>"
+							href="<?=base_url()?>help-center">Help Center</a>
+					</li>
+					<li class="nav-item ms-2">
+						<a href="<?=base_url()?>customers/login" class="btn btn-outline-primary me-2">Login</a>
+					</li>
+					<li class="nav-item">
+						<a href="<?=base_url()?>customers/register" class="btn btn-primary">Sign-up</a>
+>>>>>>> d9785c08694f7459695e0fd18afe15ff74707f79
 					</li>
 					<?php
 						}

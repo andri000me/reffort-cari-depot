@@ -24,6 +24,7 @@
 				</div>
 			</div>
 			<div class="mb-5">
+<<<<<<< HEAD
 				<?php 
 				if($this->session->flashdata('error') !='')
 				{
@@ -54,6 +55,35 @@
 						<input type="text" class="form-control" id="phone_number" name="phone_number">
 					</div>
 					<div class="d-grid gap-2 mt-5">
+=======
+				<form>
+					<div class="mb-3">
+						<label for="full_name" class="form-label">Full Name</label>
+						<input type="text" class="form-control" id="full_name">
+						<div class="form-text text-danger">Sample error</div>
+					</div>
+					<div class="mb-3">
+						<label for="email" class="form-label">Email address</label>
+						<input type="email" class="form-control" id="email">
+						<div class="form-text text-danger">Sample error</div>
+					</div>
+					<div class="mb-3">
+						<label for="password" class="form-label">Password</label>
+						<input type="password" class="form-control" id="password">
+						<div class="form-text text-danger">Sample error</div>
+					</div>
+					<div class="mb-3">
+						<label for="confirm_password" class="form-label">Confirm Password</label>
+						<input type="password" class="form-control" id="confirm_password">
+						<div class="form-text text-danger">Sample error</div>
+					</div>
+					<div class="mb-3">
+						<label for="phone" class="form-label">Phone Number</label>
+						<input type="text" class="form-control" id="phone">
+						<div class="form-text text-danger">Sample error</div>
+					</div>
+					<div class="d-grid gap-2">
+>>>>>>> d9785c08694f7459695e0fd18afe15ff74707f79
 						<button type="submit" class="btn btn-primary btn-block">Register</button>
 					</div>
 				</form>

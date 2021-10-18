@@ -12440,3 +12440,19 @@ footer.footer {
 	height: 20px;
 	object-fit: cover;
 }
+
+.footer-list a {
+	text-decoration: none;
+	--bs-text-opacity: 1;
+	color: #6c757d !important;
+}
+
+.footer-list a:hover {
+	text-decoration: none;
+	--bs-text-opacity: 1;
+	color: #4c565e !important;
+}
+
+.min-height-80 {
+	min-height: 80vh;
+}
