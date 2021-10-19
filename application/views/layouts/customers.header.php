@@ -61,9 +61,6 @@ $uri_1 = $this->uri->segment(1);
                         <a class="nav-link ms-2 me-2 <?=$uri_1 == '' ? 'active' : ''?>" href="<?=base_url()?>">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link ms-2 me-2 <?=$uri_1 == '' ? 'active' : ''?>" href="<?=base_url()?>">Home</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link ms-2 me-2" aria-current="page" href="<?=base_url()?>">Join Us Partner</a>
                     </li>
                     <li class="nav-item">
@@ -75,6 +72,22 @@ $uri_1 = $this->uri->segment(1);
                     </li>
                     <li class="nav-item">
                         <a href="<?=base_url()?>customers/register" class="btn btn-primary">Sign-up</a>
+                    </li>
+                    <?php
+						}else{
+					?>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user-circle fa-fw fa-lg me-2"></i> <?=$this->session->userdata('name')?>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">
+                                    <i class="fas fa-sign-out-alt fa-fw"></i> Logout
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <?php
 						}
