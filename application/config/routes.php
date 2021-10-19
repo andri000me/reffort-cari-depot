@@ -59,6 +59,10 @@ $route['customers/login'] = 'customers/logincontroller/index';
 $route['customers/auth/login'] = 'customers/authcontroller/login';
 $route['customers/auth/logout'] = 'customers/authcontroller/logout';
 $route['customers/home'] = 'customers/homecontroller/index';
+$route['customers/search'] = 'customers/searchcontroller/index';
+
+// customers - API
+$route['api/customers/refill-depot/nearby/(:any)/(:any)'] = 'customers/api/refilldepotcontroller/show_nearby/$1/$2';
 
 // partners
 $route['partners/dashboard'] = 'partners/dashboardcontroller/index';

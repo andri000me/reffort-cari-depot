@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class HomeController extends CI_Controller {
+class SearchController extends CI_Controller {
  
 	function __construct()
 	{
@@ -27,10 +27,8 @@ class HomeController extends CI_Controller {
 
 	public function index()
 	{
-		$data['banners'] = $this->banner->show()->result();
 		$data['services'] = $this->service->show()->result();
-		// $data['partners'] = $this->partners->show()->result();
 
-		$this->load->view('customers/home.php', $data);
+		$this->load->view('customers/search.php', $data);
 	}
 }
