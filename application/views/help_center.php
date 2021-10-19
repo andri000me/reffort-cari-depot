@@ -13,11 +13,9 @@ $this->load->view("layouts/help.center.header.php")
             <div class="col-xl">
                 <div class="text-left text-white h3 pt-5">
                     <p>How can we help you?</p>
-                    <form action="/" method="GET" class="form">
-                        <input type="search" placeholder="Search for solution" class="search-field" />
-                        <button type="submit" class="search-button">
-                            <img src="assets/images/help-center-icons/search.png">
-                        </button>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                 </div>
             </div>
