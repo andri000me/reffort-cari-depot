@@ -2323,17 +2323,17 @@ progress {
 }
 
 .form-control::-moz-placeholder {
-	color: #6c757d;
+	color: #a2aab1;
 	opacity: 1;
 }
 
 .form-control:-ms-input-placeholder {
-	color: #6c757d;
+	color: #a2aab1;
 	opacity: 1;
 }
 
 .form-control::placeholder {
-	color: #6c757d;
+	color: #a2aab1;
 	opacity: 1;
 }
 
@@ -12391,6 +12391,56 @@ footer.footer {
 	min-width: 500px;
 }
 
+.link-card {
+	text-decoration: none;
+	color: var(--bs-body-color);
+}
+
+.link-card:hover {
+	text-decoration: none;
+	color: var(--bs-body-color);
+
+}
+
+.icon-services {
+	height: 100px;
+	transition: transform .2s;
+}
+
+.link-card:hover .icon-services {
+	transform: scale(1.1);
+}
+
+
+.text-services {
+	font-size: .8rem;
+}
+
+.img-banners {
+	width: 100%;
+	border-radius: 1.255rem;
+}
+
+.img-depot {
+	width: 100%;
+	height: 200px;
+	transform: scale(.95);
+	border-radius: 1.255rem;
+	transition: transform .3s;
+}
+
+.img-depot:hover {
+	transform: scale(1.05);
+}
+
+.h-list {
+	font-size: 1.1rem;
+}
+
+.icon-depot {
+	width: 42px;
+	height: 42px;
+}
 
 @media screen and (max-width: 900px) {
 	.image-usephone {
