@@ -12367,6 +12367,11 @@ footer.footer {
 	font-size: 1.5rem;
 }
 
+.image-cs1 {
+	height: 300px;
+}
+
+
 .icon-banner {
 	width: 100px;
 }
@@ -12407,13 +12412,34 @@ footer.footer {
 	.image-usephone {
 		display: none;
 	}
+}
 
-	.form-nav-search {
-		min-width: auto;
-		margin-top: 1rem;
-		margin-bottom: 1rem;
-	}
+.form {
+	display: flex;
+	flex-direction: row;
+}
 
+.search-field {
+	margin-left: -35;
+	width: 75%;
+	padding: 10px 35px 10px 15px;
+	border: none;
+	border-radius: 10px;
+	outline: none;
+	font-size: 20;
+}
+
+.search-button {
+	background: transparent;
+	border: none;
+	outline: none;
+	margin-left: -40px;
+}
+
+.form-nav-search {
+	min-width: auto;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
 }
 
 .footer-list a {
