@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class HomeController extends CI_Controller {
+class RefillDepotController extends CI_Controller {
  
 	function __construct()
 	{
@@ -25,12 +25,22 @@ class HomeController extends CI_Controller {
 		$this->auth->check_auth();
 	}
 
-	public function index()
+	public function show()
 	{
-		$data['banners'] = $this->banner->show()->result();
-		$data['services'] = $this->service->show()->result();
-		// $data['partners'] = $this->partners->show()->result();
 
-		$this->load->view('customers/home.php', $data);
+	}
+	public function show_detail(){
+
+	}
+	public function show_nearby($latitude, $longtitude)
+	{
+		
+		$data = $this->partner->show_nearby($latitude, $longtitude)->result();
+
+		$this->output
+		->set_content_type('application/json')
+		->set_output(
+			json_encode($data)
+		);
 	}
 }

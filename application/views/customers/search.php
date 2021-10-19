@@ -2,50 +2,21 @@
 	$this->load->view("layouts/customers.header.php")
 ?>
 <div class="container min-height-80 py-4">
-	<div class="row">
-		<?php
-		foreach($banners as $banner){ 
-		?>
-		<div class="col py-4">
-			<div class="card">
-				<div class="card-body p-0">
-					<img src="<?=base_url().$banner->source?>" alt="banner" class="img-banners">
-				</div>
-			</div>
-		</div>
-		<?php } ?>
-	</div>
-	<div class="row">
-		<div class="col-lg-12 mt-4">
-			<b class="h-list">Service Category</b>
-		</div>
-	</div>
-	<div class="row">
-		<?php
-			foreach($services as $service){ 
-		?>
-		<div class="col-sm-6 col-lg mt-4 mb-2">
-			<a href="#" class="link-card">
-				<div class="card">
-					<div class="card-body text-center">
-						<img src="<?=base_url().$service->icon?>" alt="" class="icon-services">
-						<p class="mb-0 mt-3 text-services">
-							<?=$service->name?>
-						</p>
-					</div>
-				</div>
-			</a>
-		</div>
-		<?php } ?>
-	</div>
+
 	<div class="row align-items-end">
-		<div class="col mt-4">
-			<b class="h-list">Nearby Refill Depot</b>
+		<div class="col-8 mt-4">
+			<b class="h-list">Refill Depot List</b>
+			<div class="small text-muted">Result For</div>
 		</div>
-		<div class="col-auto">
-			<a href="#" class="btn-link">
-				See All
-			</a>
+		<div class="col-4 mt-4">
+			<select class="form-select" aria-label="Default select example">
+				<option selected>Service Category</option>
+				<?php
+					foreach($services as $service){ 
+				?>
+				<option value="1"><?=$service->name?></option>
+				<?php } ?>
+			</select>
 		</div>
 	</div>
 	<div class="row" id="list-refill-depot">
