@@ -12402,9 +12402,10 @@ footer.footer {
 		height: 100px;
 	}
 
-	.image-cs1 {
-		height: 100px;
+	.form-nav-search {
+		min-width: 400px;
 	}
+
 }
 
 @media screen and (max-width: 600px) {
@@ -12435,10 +12436,10 @@ footer.footer {
 	margin-left: -40px;
 }
 
-.search-button img {
-	width: 20px;
-	height: 20px;
-	object-fit: cover;
+.form-nav-search {
+	min-width: auto;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
 }
 
 .footer-list a {
@@ -12454,5 +12455,5 @@ footer.footer {
 }
 
 .min-height-80 {
-	min-height: 80vh;
+	min-height: 700px;
 }
