@@ -64,6 +64,9 @@ $route['customers/home'] = 'customers/homecontroller/index';
 $route['partners/dashboard'] = 'partners/dashboardcontroller/index';
 
 // admins
+$route['admins/login'] = 'admins/logincontroller/index';
+$route['admins/auth/login'] = 'admins/authcontroller/login';
+$route['admins/dashboard'] = 'admins/dashboardcontroller/index';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
