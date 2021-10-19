@@ -33,7 +33,7 @@ $uri_1 = $this->uri->segment(1);
 
 <body>
 	<!-- Navigation-->
-	<nav class="navbar navbar-expand-md navbar-light fixed-top bg-white">
+	<nav class="navbar navbar-expand-md navbar-light fixed-top bg-white shadow-sm">
 		<div class="container" style="vertical-align:middle">
 			<a class="navbar-brand align-self-center" href="<?=base_url()?>">
 				<img class="logo-brand" src="<?=base_url()?>assets/images/logo-reffort-cari-depot.svg" alt="">
@@ -44,7 +44,19 @@ $uri_1 = $this->uri->segment(1);
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<form class="d-flex mx-auto">
+					<div class="input-group form-nav-search">
+						<input class="form-control" type="search" placeholder="Search" aria-label="Search">
+						<button class="btn btn-primary" type="submit">
+							<i class="fas fa-search fa-fw   "></i>
+						</button>
+					</div>
+				</form>
 				<ul class="navbar-nav ms-auto mb-2 mb-md-0">
+					<?php
+						if(empty($this->session->userdata('id'))){
+						
+					?>
 					<li class="nav-item">
 						<a class="nav-link ms-2 me-2 <?=$uri_1 == '' ? 'active' : ''?>" href="<?=base_url()?>">Home</a>
 					</li>
@@ -61,6 +73,25 @@ $uri_1 = $this->uri->segment(1);
 					<li class="nav-item">
 						<a href="<?=base_url()?>customers/register" class="btn btn-primary">Sign-up</a>
 					</li>
+					<?php
+						}else{
+					?>
+
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false">
+							<i class="fas fa-user-circle fa-fw fa-lg me-2"></i> <?=$this->session->userdata('name')?>
+						</a>
+						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+							<li><a class="dropdown-item" href="#">
+									<i class="fas fa-sign-out-alt fa-fw"></i> Logout
+								</a>
+							</li>
+						</ul>
+					</li>
+					<?php
+						}
+					?>
 				</ul>
 			</div>
 		</div>
