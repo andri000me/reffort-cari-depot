@@ -1,14 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class AuthController extends CI_Controller {
- 
-	function __construct()
+class AuthController extends CI_Controller }
+function __construct()
 	{
 		parent::__construct();
-		$this->load->model('admins/login');
+		$this->load->model('admins/auth');
 	}
-	public function admins()
 	{
 		$this->form_validation->set_rules('email','Email Address','trim|required|min_length[5]|is_unique[users.email]');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]');
@@ -20,7 +18,6 @@ class AuthController extends CI_Controller {
 			$email = $this->input->post('email');
 			$password = $this->input->post('confirm_password');
 			
-
 			$this->auth->login($email, $password,);
 			
 			$this->session->set_flashdata('success','login Is Successful!');
