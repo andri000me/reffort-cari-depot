@@ -65,8 +65,9 @@ $route['customers/search'] = 'customers/searchcontroller/index';
 $route['api/customers/refill-depot/nearby/(:any)/(:any)'] = 'customers/api/refilldepotcontroller/show_nearby/$1/$2';
 
 // partners
+$route['partners/register'] = 'partners/registercontroller/index';
 $route['partners/dashboard'] = 'partners/dashboardcontroller/index';
-$route['partners/license_document'] = 'partners/LicenseDocumentController/index';
+$route['partners/license_document'] = 'partners/licensedocumentcontroller/index';
 
 // admins
 
