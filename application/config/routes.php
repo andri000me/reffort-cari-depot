@@ -66,6 +66,7 @@ $route['api/customers/refill-depot/nearby/(:any)/(:any)'] = 'customers/api/refil
 
 // partners
 $route['partners/dashboard'] = 'partners/dashboardcontroller/index';
+$route['partners/license_document'] = 'partners/LicenseDocumentController/index';
 
 // admins
 
