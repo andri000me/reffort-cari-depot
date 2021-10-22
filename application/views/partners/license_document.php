@@ -8,15 +8,15 @@ $this->load->view("layouts/partners.header.php")
                 <from method="post" action="<? base_url() ?>ustomers/auth/login">
                     <div class="mb-3">
                         <label for="name" class="form-label">Upload Perijinan/Dokumen Usaha</label>
-                        <input type="text" class="form-control" id="name" name="name">
+                        <input class="form-control" type="file" id="fileupload">
                     </div>
                     <div class="mb-3">
                         <label for="date" class="form-label">Start Date</label>
-                        <input type="date" class="form-control" id="date" name="date">
+                        <input type="date" class="form-control" id="date" name="start_date">
                     </div>
                     <div class="mb-3">
                         <label for="date" class="form-label">End Date</label>
-                        <input type="date" class="form-control" id="date" name="date">
+                        <input type="date" class="form-control" id="date" name="end_date">
                     </div>
                     <div>
                         <div class="d-grid gap-2 col-6 mx-right">
