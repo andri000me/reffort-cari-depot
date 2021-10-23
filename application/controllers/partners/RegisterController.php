@@ -5,6 +5,6 @@ class RegisterController extends CI_Controller
 {
     public function index()
     {
-        $this->load->view('partners/register_partners');
+        $this->load->view('partners/register');
     }
 }

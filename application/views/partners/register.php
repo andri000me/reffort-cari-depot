@@ -20,18 +20,26 @@ $this->load->view("layouts/auth.header.php")
             </div>
         </div>
 
-        <div class="col">
-            <b class="h3">
-                Partners Register
-            </b>
-        </div>
-        <div class="col-auto">
-            <a href="<?= base_url(); ?>partners/login" class="btn-link">
-                Login
-            </a>
-        </div>
-
         <div class="col-4">
+            <div class="row mb-5 align-items-end">
+                <div class="col">
+                    <b class="h3">
+                        Register
+                    </b>
+                </div>
+                <div class="col-auto">
+                    <a href="<?= base_url() ?>partners/login" class="btn-link">
+                        Login
+                    </a>
+                </div>
+            </div>
+            <?php
+            if ($this->session->flashdata('error') != '') {
+                echo '<div class="alert alert-danger" role="alert">';
+                echo $this->session->flashdata('error');
+                echo '</div>';
+            }
+            ?>
             <form action="<?= base_url() ?>partners/auth/register" method="post">
                 <div class="mb-3">
                     <label for="refill_depot_name" class="form-label">Refill Depot Name</label>

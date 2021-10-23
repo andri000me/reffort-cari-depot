@@ -71,6 +71,7 @@ $route['partners/dashboard'] = 'partners/dashboardcontroller/index';
 $route['partners/license_document'] = 'partners/LicenseDocumentController/index';
 $route['partners/login'] = 'partners/logincontroller/index';
 $route['partners/register'] = 'partners/registercontroller/index';
+$route['partners/auth/register'] = 'partners/authcontroller/register';
 $route['partners/profile'] = 'partners/profilecontroller/index';
 $route['partners/license'] = 'partners/licensedocumentcontroller/index';
 $route['partners/edit'] = 'partners/editgallerycontroller/index';
