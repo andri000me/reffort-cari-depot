@@ -34,6 +34,13 @@ $this->load->view("layouts/auth.header.php")
 				</div>
 			</div>
 			<div class="col">
+				<?php
+				if ($this->session->flashdata('error') != '') {
+					echo '<div class="alert alert-danger" role="alert">';
+					echo $this->session->flashdata('error');
+					echo '</div>';
+				}
+				?>
 				<form method="post" action="<?= base_url() ?>partners/auth/login">
 					<div class="mb-3">
 						<label for="email" class="form-label">Email Address</label>
