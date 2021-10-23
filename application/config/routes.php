@@ -67,6 +67,7 @@ $route['customers/search'] = 'customers/searchcontroller/index';
 $route['api/customers/refill-depot/nearby/(:any)/(:any)'] = 'customers/api/refilldepotcontroller/show_nearby/$1/$2';
 
 // partners
+$route['partners/register'] = 'partners/registercontroller/index';
 $route['partners/dashboard'] = 'partners/dashboardcontroller/index';
 $route['partners/license_document'] = 'partners/LicenseDocumentController/index';
 $route['partners/login'] = 'partners/logincontroller/index';
@@ -79,6 +80,9 @@ $route['partners/license'] = 'partners/licensedocumentcontroller/index';
 $route['partners/edit'] = 'partners/editgallerycontroller/index';
 
 // admins
+$route['admins/login'] = 'admins/logincontroller/index';
+$route['admins/auth/login'] = 'admins/authcontroller/login';
+$route['admins/dashboard'] = 'admins/dashboardcontroller/index';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

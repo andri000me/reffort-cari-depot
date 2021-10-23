@@ -68,3 +68,7 @@ $this->load->view("layouts/auth.header.php")
         </div>
     </div>
 </div>
+
+<?php
+$this->load->view("layouts/partners.footer.php")
+?>
