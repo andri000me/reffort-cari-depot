@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
@@ -59,6 +59,8 @@ $route['customers/login'] = 'customers/logincontroller/index';
 $route['customers/auth/login'] = 'customers/authcontroller/login';
 $route['customers/auth/logout'] = 'customers/authcontroller/logout';
 $route['customers/home'] = 'customers/homecontroller/index';
+$route['customers/detail-refill-depot'] = 'customers/detaildepotcontroller/index';
+
 $route['customers/search'] = 'customers/searchcontroller/index';
 
 // customers - API
@@ -67,7 +69,12 @@ $route['api/customers/refill-depot/nearby/(:any)/(:any)'] = 'customers/api/refil
 // partners
 $route['partners/register'] = 'partners/registercontroller/index';
 $route['partners/dashboard'] = 'partners/dashboardcontroller/index';
-$route['partners/license_document'] = 'partners/licensedocumentcontroller/index';
+$route['partners/license_document'] = 'partners/LicenseDocumentController/index';
+$route['partners/login'] = 'partners/logincontroller/index';
+$route['partners/register'] = 'partners/registercontroller/index';
+$route['partners/profile'] = 'partners/profilecontroller/index';
+$route['partners/license'] = 'partners/licensedocumentcontroller/index';
+$route['partners/edit'] = 'partners/editgallerycontroller/index';
 
 // admins
 $route['admins/login'] = 'admins/logincontroller/index';
