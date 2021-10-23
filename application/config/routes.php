@@ -69,6 +69,9 @@ $route['partners/dashboard'] = 'partners/dashboardcontroller/index';
 $route['partners/license_document'] = 'partners/LicenseDocumentController/index';
 
 // admins
+$route['admins/login'] = 'admins/logincontroller/index';
+$route['admins/auth/login'] = 'admins/authcontroller/login';
+$route['admins/dashboard'] = 'admins/dashboardcontroller/index';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
