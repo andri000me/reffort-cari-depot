@@ -25,11 +25,13 @@ class AuthController extends CI_Controller
 			$phone_number = $this->input->post('phone_number');
 
 			$this->auth->register($email, $password, $name, $phone_number);
-
-			$this->session->set_flashdata('success', 'Registration Is Successful, Please Login!');
-
-			redirect('customers/login');
-		} else {
+			
+			$this->session->set_flashdata('success','Registration Is Successful, Please Login!');
+			
+			redirect('customers/register');
+		}
+		else
+		{
 			$this->session->set_flashdata('error', validation_errors());
 			redirect('customers/register');
 		}
@@ -50,16 +52,16 @@ class AuthController extends CI_Controller
 			}
 		} else {
 			$this->session->set_flashdata('error', validation_errors());
-			redirect('customers/register');
+			redirect('customers/login');
 		}
 	}
 
 	public function logout()
 	{
-		$this->session->unset_userdata('id');
-		$this->session->unset_userdata('email');
-		$this->session->unset_userdata('name');
+		$this->session->unset_userdata('customers_id');
+		$this->session->unset_userdata('customers_email');
+		$this->session->unset_userdata('customers_name');
 
-		redirect('customers/login');
+		redirect('customers/home');
 	}
 }

@@ -54,16 +54,15 @@ $route['help-center'] = 'helpcentercontroller';
 
 // customers
 $route['customers/register'] = 'customers/registercontroller/index';
-$route['customers/auth/register'] = 'customers/authcontroller/register';
 $route['customers/login'] = 'customers/logincontroller/index';
+$route['customers/auth/register'] = 'customers/authcontroller/register';
 $route['customers/auth/login'] = 'customers/authcontroller/login';
 $route['customers/auth/logout'] = 'customers/authcontroller/logout';
 $route['customers/home'] = 'customers/homecontroller/index';
-$route['customers/detail-refill-depot'] = 'customers/detaildepotcontroller/index';
-
-$route['customers/search'] = 'customers/searchcontroller/index';
+$route['customers/refill-depot'] = 'customers/refilldepotcontroller/index';
 
 // customers - API
+$route['api/customers/refill-depot'] = 'customers/api/refilldepotcontroller/show';
 $route['api/customers/refill-depot/nearby/(:any)/(:any)'] = 'customers/api/refilldepotcontroller/show_nearby/$1/$2';
 
 // partners
@@ -84,5 +83,6 @@ $route['admins/login'] = 'admins/logincontroller/index';
 $route['admins/auth/login'] = 'admins/authcontroller/login';
 $route['admins/dashboard'] = 'admins/dashboardcontroller/index';
 
+$route['migrate'] = 'migrationcontroller/migrate';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

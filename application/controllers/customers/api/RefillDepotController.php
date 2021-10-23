@@ -27,6 +27,28 @@ class RefillDepotController extends CI_Controller {
 
 	public function show()
 	{
+		$service = (!empty($this->input->get('service')) ? $this->input->get('service') : "");
+
+		$search = (!empty($this->input->get('search')) ? $this->input->get('search') : "");
+
+		$page = (!empty($this->input->get('page')) ? $this->input->get('page') * 6 : 0);
+
+		$data = $this->partner->show($page, 6, $search, $service)->result();
+		$total_row = $this->partner->show_total($search, $service)->num_rows();
+
+		$this->output
+		->set_content_type('application/json')
+		->set_output(
+			json_encode(
+				array(
+					'data'=>$data,
+					'pagination'=>array(
+						'total_row'=> ceil($total_row / 6),
+						'page'=>$page
+					)
+				)
+			)
+		);
 
 	}
 	public function show_detail(){

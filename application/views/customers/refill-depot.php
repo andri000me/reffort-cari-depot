@@ -4,29 +4,52 @@
 <div class="container min-height-80 py-4">
 
 	<div class="row align-items-end">
-		<div class="col-8 mt-4">
+		<div class="col mt-4">
 			<b class="h-list">Refill Depot List</b>
 			<div class="small text-muted">Result For</div>
 		</div>
-		<div class="col-4 mt-4">
-			<select class="form-select" aria-label="Default select example">
-				<option selected>Service Category</option>
-				<?php
-					foreach($services as $service){ 
-				?>
-				<option value="1"><?=$service->name?></option>
-				<?php } ?>
-			</select>
+		<div class="col-auto mt-4">
+			<div class="row align-items-center">
+				<div class="col-auto">
+					Service Category
+				</div>
+				<div class="col">
+					<select class="form-select" onchange="getDataRefillDepot()" id="service">
+						<option value="">All Service</option>
+						<?php
+							foreach($services as $service){ 
+						?>
+
+						<option value="1"
+							<?=(!empty($this->input->get('service') && $this->input->get('service') == $service->name) ? 'selected' : '' )?>>
+							<?=$service->name?></option>
+						<?php } ?>
+					</select></div>
+			</div>
 		</div>
 	</div>
 	<div class="row" id="list-refill-depot">
 
 	</div>
+	<div class="row">
+		<div class="col-lg-12 py-4 text-center">
+			<ul class="pagination justify-content-center" id="pagination">
+			</ul>
+		</div>
+	</div>
 </div>
 
 <script>
+	var page = 0;
+	var service = $("#service").val();
+	var search = $("#search").val();
+
+	var lat = 0;
+	var lng = 0;
+
 	$(document).ready(function () {
 		getLocation()
+
 	});
 
 	function getLocation() {
@@ -38,17 +61,25 @@
 	}
 
 	function showPosition(position) {
-		getDataRefillDepot(position.coords.latitude, position.coords.longitude)
+		lat = position.coords.latitude
+		lng = position.coords.longitude
+		getDataRefillDepot()
 	}
 
-	function getDataRefillDepot(lat, lng) {
+	function loadingAnimation() {
 		$('#list-refill-depot').html();
+	}
+
+	function getDataRefillDepot() {
+		loadingAnimation();
+
+		window.scrollTo(0, 0);
 
 		var list_refill_depot = "";
 
-		axios.get('<?=base_url()?>api/customers/refill-depot/nearby/' + lat + '/' + lng)
+		axios.get('<?=base_url()?>api/customers/refill-depot?search=' + search + '&service=' + service + '&page=' + page)
 			.then(function (response) {
-				response.data.forEach(item => {
+				response.data.data.forEach(item => {
 					list_refill_depot += `<div class="col-lg-4 mt-4 mb-2">
 						<div class="card">
 							<a href="#" class="link-card">
@@ -96,6 +127,31 @@
 					}
 				);
 
+				var list_page = '';
+				var total_pages = response.data.pagination.total_row;
+
+				for (i = 0; i < total_pages; i++) {
+					list_page += `
+					<li class="page-item ` + (page == i ? 'active' : '') + `">
+						<a class="page-link" onclick="new_list('` + i + `')">
+							` + (i + 1) + `
+						</a>
+					</li>`;
+				}
+
+				$('#pagination').html(`
+				<li class="page-item ` + (page == 0 ? 'disabled' : '') + `">
+					<a class="page-link" href="#" onclick="prev_list()">
+						<i class="fas fa-chevron-left fa-fw"></i>
+					</a>
+				</li>
+				` + list_page + `
+				<li class="page-item ` + (page == (total_pages - 1) ? 'disabled' : '') + `">
+					<a class="page-link" href="#" onclick="next_list()">
+						<i class="fas fa-chevron-right fa-fw"></i>
+					</a>
+				</li>`);
+
 			})
 			.catch(function (error) {
 				// handle error
@@ -104,6 +160,21 @@
 			.then(function () {
 				// always executed
 			});
+	}
+
+	function new_list(new_page) {
+		page = new_page
+		getDataRefillDepot()
+	}
+
+	function prev_list() {
+		page = page - 1;
+		getDataRefillDepot()
+	}
+
+	function next_list() {
+		page = page + 1;
+		getDataRefillDepot()
 	}
 
 	function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
