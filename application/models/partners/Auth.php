@@ -23,9 +23,9 @@ class Auth extends CI_Model
 
             if (password_verify($password, $data->password)) {
 
-                $this->session->set_userdata('customers_id', $data->id);
-                $this->session->set_userdata('customers_email', $email);
-                $this->session->set_userdata('customers_name', $data->name);
+                $this->session->set_userdata('partners_id', $data->id);
+                $this->session->set_userdata('partners_email', $email);
+                $this->session->set_userdata('partners_name', $data->name);
 
                 return TRUE;
             } else {
@@ -37,7 +37,7 @@ class Auth extends CI_Model
     }
     function check_auth()
     {
-        if (empty($this->session->userdata('customers_id'))) {
+        if (empty($this->session->userdata('partners_id'))) {
             redirect('partners/login');
         }
     }

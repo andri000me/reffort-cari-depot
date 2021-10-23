@@ -34,7 +34,7 @@ $this->load->view("layouts/auth.header.php")
 				</div>
 			</div>
 			<div class="col">
-				<form method="post" action="<?= base_url() ?>customers/auth/login">
+				<form method="post" action="<?= base_url() ?>partners/auth/login">
 					<div class="mb-3">
 						<label for="email" class="form-label">Email Address</label>
 						<input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">

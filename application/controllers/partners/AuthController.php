@@ -56,9 +56,9 @@ class AuthController extends CI_Controller
 
 	public function logout()
 	{
-		$this->session->unset_userdata('id');
-		$this->session->unset_userdata('email');
-		$this->session->unset_userdata('name');
+		$this->session->unset_userdata('partners_id');
+		$this->session->unset_userdata('partners_email');
+		$this->session->unset_userdata('partners_name');
 
 		redirect('partners/login');
 	}
