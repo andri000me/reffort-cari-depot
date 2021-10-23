@@ -23,13 +23,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<!-- Fontawesome -->
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
 		integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+	<!-- Bootstrap core JS-->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 	<!-- Ajax -->
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
 		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<!-- Axios -->
 	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-	<!-- Bootstrap core JS-->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 	<!-- Core theme JS-->
 	<script src="<?=base_url();?>assets/js/scripts.js"></script>
 	<!-- Sweetalert -->
@@ -58,9 +58,11 @@ $uri_1 = $this->uri->segment(1);
 				<?php
 					if(!empty($this->session->userdata('customers_id'))){
 				?>
-				<form class="d-flex mx-auto">
+				<form class="d-flex mx-auto" method="GET" action="<?=base_url()?>customers/refill-depot">
 					<div class="input-group form-nav-search">
-						<input class="form-control" type="search" placeholder="Search refill depot" aria-label="Search">
+						<input class="form-control" type="search" placeholder="Search refill depot" aria-label="Search"
+							name="search" id="search"
+							<?=(!empty($this->input->get('search')) ? "value='".$this->input->get('search')."'" : '' )?>>
 						<button class="btn btn-primary" type="submit">
 							<i class="fas fa-search fa-fw"></i>
 						</button>
@@ -86,7 +88,7 @@ $uri_1 = $this->uri->segment(1);
 						<a href="<?=base_url()?>customers/login" class="btn btn-outline-primary me-2">Login</a>
 					</li>
 					<li class="nav-item">
-						<a href="<?=base_url()?>customers/register" class="btn btn-primary">Sign-up</a>
+						<a href="<?=base_url()?>customers/register" class="btn btn-primary">Register</a>
 					</li>
 					<?php
 						}else{
@@ -99,7 +101,7 @@ $uri_1 = $this->uri->segment(1);
 							<?=$this->session->userdata('customers_name')?>
 						</a>
 						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="#">
+							<li><a class="dropdown-item" href="<?=base_url()?>customers/auth/logout">
 									<i class="fas fa-sign-out-alt fa-fw"></i> Logout
 								</a>
 							</li>

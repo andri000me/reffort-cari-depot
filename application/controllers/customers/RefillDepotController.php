@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class SearchController extends CI_Controller {
+class RefillDepotController extends CI_Controller {
  
 	function __construct()
 	{
@@ -29,6 +29,6 @@ class SearchController extends CI_Controller {
 	{
 		$data['services'] = $this->service->show()->result();
 
-		$this->load->view('customers/search.php', $data);
+		$this->load->view('customers/refill-depot.php', $data);
 	}
 }

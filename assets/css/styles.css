@@ -5557,13 +5557,13 @@ fieldset:disabled .btn {
 }
 
 .page-item:first-child .page-link {
-	border-top-left-radius: 1.255rem;
-	border-bottom-left-radius: 1.255rem;
+	border-top-left-radius: .5rem;
+	border-bottom-left-radius: .5rem;
 }
 
 .page-item:last-child .page-link {
-	border-top-right-radius: 1.255rem;
-	border-bottom-right-radius: 1.255rem;
+	border-top-right-radius: .5rem;
+	border-bottom-right-radius: .5rem;
 }
 
 .pagination-lg .page-link {
@@ -12429,7 +12429,7 @@ footer.footer {
 
 .img-depot {
 	width: 100%;
-	height: 200px;
+	height: 250px;
 	transform: scale(.95);
 	border-radius: 0.5rem;
 	transition: transform .3s;
@@ -12485,12 +12485,6 @@ footer.footer {
 	border: none;
 	outline: none;
 	margin-left: -40px;
-}
-
-.form-nav-search {
-	min-width: auto;
-	margin-top: 1rem;
-	margin-bottom: 1rem;
 }
 
 .footer-list a {

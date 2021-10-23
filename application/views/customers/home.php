@@ -25,7 +25,7 @@
 			foreach($services as $service){ 
 		?>
 		<div class="col-sm-6 col-lg mt-4 mb-2">
-			<a href="#" class="link-card">
+			<a href="<?=base_url()?>customers/refill-depot?service=<?=$service->name?>" class="link-card">
 				<div class="card">
 					<div class="card-body text-center">
 						<img src="<?=base_url().$service->icon?>" alt="" class="icon-services">
@@ -43,7 +43,7 @@
 			<b class="h-list">Nearby Refill Depot</b>
 		</div>
 		<div class="col-auto">
-			<a href="#" class="btn-link">
+			<a href="<?=base_url()?>customers/refill-depot" class="btn-link">
 				See All
 			</a>
 		</div>
@@ -80,7 +80,7 @@
 				response.data.forEach(item => {
 					list_refill_depot += `<div class="col-lg-4 mt-4 mb-2">
 						<div class="card">
-							<a href="#" class="link-card">
+							<a href="<?=base_url()?>customers/refill-depot?service=` + item.name + `" class="link-card">
 								<div class="card-body">
 									<div class="row align-items-center">
 										<div class="col-auto">
