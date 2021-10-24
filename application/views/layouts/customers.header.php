@@ -34,6 +34,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<script src="<?=base_url();?>assets/js/scripts.js"></script>
 	<!-- Sweetalert -->
 	<script src="<?=base_url();?>assets/js/sweetalert2.all.min.js"></script>
+
+    <!-- leafletjs -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
 </head>
 
 <?php
@@ -78,7 +91,7 @@ $uri_1 = $this->uri->segment(1);
 						<a class="nav-link ms-2 me-2 <?=$uri_1 == '' ? 'active' : ''?>" href="<?=base_url()?>">Home</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link ms-2 me-2" aria-current="page" href="<?=base_url()?>">Join Us Partner</a>
+						<a class="nav-link ms-2 me-2" aria-current="page" href="<?=base_url()?>partners/register">Join Us Partner</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link ms-2 me-2 <?=$uri_1 == 'help-center' ? 'active' : ''?>"
@@ -95,13 +108,13 @@ $uri_1 = $this->uri->segment(1);
 					?>
 
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+						<a class="nav-link dropdown-toggle text-muted" id="navbarDropdown" href="#" role="button"
 							data-bs-toggle="dropdown" aria-expanded="false">
 							<i class="fas fa-user-circle fa-fw fa-lg me-2"></i>
 							<?=$this->session->userdata('customers_name')?>
 						</a>
 						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="<?=base_url()?>customers/auth/logout">
+							<li><a class="dropdown-item text-muted" href="<?=base_url()?>customers/auth/logout">
 									<i class="fas fa-sign-out-alt fa-fw"></i> Logout
 								</a>
 							</li>

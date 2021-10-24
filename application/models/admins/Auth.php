@@ -3,7 +3,7 @@ class Auth extends CI_Model
 {
 	function login($email, $password)
 	{
-        $query = $this->db->get_where('users',array('email'=>$email));
+        $query = $this->db->get_where('admins',array('email'=>$email));
 
         if($query->num_rows() > 0)
         {
@@ -34,4 +34,3 @@ class Auth extends CI_Model
         }
 	}
 }
-

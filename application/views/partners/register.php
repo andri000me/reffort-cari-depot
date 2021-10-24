@@ -12,15 +12,13 @@ $this->load->view("layouts/auth.header.php")
             </div>
         </div>
 
-        <div class="col">
-            <div class="text-center">
-                <div class="mb-5">
-                    <img class="rounded" src="<?= base_url(); ?>assets/images/resource/partners.png" alt="" width="300px">
-                </div>
+        <div class="col"> 
+            <div class="mb-5">
+                <img class="rounded" src="<?= base_url(); ?>assets/images/resource/partners.png" alt="" width="300px">
             </div>
         </div>
 
-        <div class="col-4">
+        <div class="col-lg-4">
             <div class="row mb-5 align-items-end">
                 <div class="col">
                     <b class="h3">
@@ -62,7 +60,7 @@ $this->load->view("layouts/auth.header.php")
                     <input type="text" class="form-control" id="phone_number" name="phone_number">
                 </div>
                 <div class="d-grid gap-2 mt-5 mb-5">
-                    <button type="submit" class="btn btn-primary btn-block">Register</button>
+                    <button type="submit" class="btn btn-primary btn-block">Register Partners</button>
                 </div>
             </form>
         </div>
