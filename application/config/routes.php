@@ -60,6 +60,7 @@ $route['customers/auth/login'] = 'customers/authcontroller/login';
 $route['customers/auth/logout'] = 'customers/authcontroller/logout';
 $route['customers/home'] = 'customers/homecontroller/index';
 $route['customers/refill-depot'] = 'customers/refilldepotcontroller/index';
+$route['customers/detail-refill-depot/(:num)'] = 'customers/detaildepotcontroller/index/$1';
 
 // customers - API
 $route['api/customers/refill-depot'] = 'customers/api/refilldepotcontroller/show';

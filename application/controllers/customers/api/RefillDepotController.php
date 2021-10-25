@@ -33,8 +33,28 @@ class RefillDepotController extends CI_Controller {
 
 		$page = (!empty($this->input->get('page')) ? $this->input->get('page') * 6 : 0);
 
-		$data = $this->partner->show($page, 6, $search, $service)->result();
+		$data = array();
+		$partners = $this->partner->show($page, 6, $search, $service)->result();
 		$total_row = $this->partner->show_total($search, $service)->num_rows();
+
+
+		$i = 0;
+		foreach($partners as $partner){
+
+			$thumbnails = $this->partnergallery->show_thumbnail($partner->id)->result();
+
+			$data[$i] = array(
+				'id' => $partner->id,
+				'name' => $partner->name,
+				'icon' => $partner->icon,
+				'thumbnail' => $thumbnails,
+				'highlight' => $partner->highlight,
+				'latitude' => $partner->latitude,
+				'longitude' => $partner->longitude,
+				'total_likes' => $partner->total_likes,
+			);
+			$i++;
+		}
 
 		$this->output
 		->set_content_type('application/json')
@@ -56,8 +76,29 @@ class RefillDepotController extends CI_Controller {
 	}
 	public function show_nearby($latitude, $longtitude)
 	{
+		$data = array();
+		$partners = $this->partner->show_nearby($latitude, $longtitude)->result();
 		
-		$data = $this->partner->show_nearby($latitude, $longtitude)->result();
+
+		$i = 0;
+		foreach($partners as $partner){
+
+			$thumbnails = $this->partnergallery->show_thumbnail($partner->id)->result();
+
+			$data[$i] = array(
+				'id' => $partner->id,
+				'name' => $partner->name,
+				'icon' => $partner->icon,
+				'thumbnail' => $thumbnails,
+				'highlight' => $partner->highlight,
+				'latitude' => $partner->latitude,
+				'longitude' => $partner->longitude,
+				'distance' => $partner->distance,
+				'total_likes' => $partner->total_likes,
+			);
+			$i++;
+		}
+
 
 		$this->output
 		->set_content_type('application/json')

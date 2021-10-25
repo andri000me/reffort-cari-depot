@@ -6,7 +6,15 @@
 	<div class="row align-items-end">
 		<div class="col mt-4">
 			<b class="h-list">Refill Depot List</b>
-			<div class="small text-muted">Result For</div>
+			<?php
+				if(!empty($this->input->get('search')))
+				{
+			?>
+			<div class="small text-muted">Result For : <?=$this->input->get('search')?>
+			</div>
+			<?php
+				}
+			?>
 		</div>
 		<div class="col-auto mt-4">
 			<div class="row align-items-center">
@@ -14,13 +22,13 @@
 					Service Category
 				</div>
 				<div class="col">
-					<select class="form-select" onchange="getDataRefillDepot()" id="service">
+					<select class="form-select" onchange="filterService()" id="service">
 						<option value="">All Service</option>
 						<?php
 							foreach($services as $service){ 
 						?>
 
-						<option value="1"
+						<option value="<?=$service->id?>"
 							<?=(!empty($this->input->get('service') && $this->input->get('service') == $service->name) ? 'selected' : '' )?>>
 							<?=$service->name?></option>
 						<?php } ?>
@@ -29,6 +37,15 @@
 		</div>
 	</div>
 	<div class="row" id="list-refill-depot">
+
+	</div>
+	<div class="row justify-content-center d-none" id="search-empty">
+		<div class="col-lg-4 text-center mt-5 mb-5">
+			<img src="<?=base_url()?>assets/images/resource/search-empty.svg" alt="" class="img-search-empty">
+			<p class="text-mmuted mt-3">
+				We cannot find what do you mean ?
+			</p>
+		</div>
 
 	</div>
 	<div class="row">
@@ -51,6 +68,10 @@
 		getLocation()
 
 	});
+	function filterService(){
+		page = 0;
+		getDataRefillDepot()
+	}
 
 	function getLocation() {
 		if (navigator.geolocation) {
@@ -76,13 +97,20 @@
 		window.scrollTo(0, 0);
 
 		var list_refill_depot = "";
+		
+		service = $("#service").val();
+		search = $("#search").val();
 
 		axios.get('<?=base_url()?>api/customers/refill-depot?search=' + search + '&service=' + service + '&page=' + page)
 			.then(function (response) {
+				if (response.data.data.length == 0) {
+					$("#search-empty").removeClass('d-none')
+
+				}
 				response.data.data.forEach(item => {
 					list_refill_depot += `<div class="col-lg-4 mt-4 mb-2">
 						<div class="card">
-							<a href="#" class="link-card">
+							<a href="<?=base_url()?>customers/detail-refill-depot/` + item.id + `" class="link-card">
 								<div class="card-body">
 									<div class="row align-items-center">
 										<div class="col-auto">
@@ -98,7 +126,7 @@
 									</div>
 								</div>
 								<div class="card-body p-0">
-									<img src="<?=base_url()?>assets/images/depot/depot-1.jpg" alt="" class="img-depot">
+									<img src="<?=base_url()?>` + item.thumbnail[0].source + `" alt="" class="img-depot">
 								</div>
 							</a>
 							<div class="card-body">

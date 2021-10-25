@@ -5509,7 +5509,7 @@ fieldset:disabled .btn {
 	color: #0d6efd;
 	text-decoration: none;
 	background-color: #fff;
-	border: 1px solid #dee2e6;
+	/* border: 1px solid #dee2e6; */
 	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
@@ -5523,7 +5523,7 @@ fieldset:disabled .btn {
 	z-index: 2;
 	color: #0a58ca;
 	background-color: #e9ecef;
-	border-color: #dee2e6;
+	/* border-color: #dee2e6; */
 }
 
 .page-link:focus {
@@ -5542,14 +5542,14 @@ fieldset:disabled .btn {
 	z-index: 3;
 	color: #fff;
 	background-color: #0d6efd;
-	border-color: #0d6efd;
+	/* border-color: #0d6efd; */
 }
 
 .page-item.disabled .page-link {
 	color: #6c757d;
 	pointer-events: none;
 	background-color: #fff;
-	border-color: #dee2e6;
+	/* border-color: #dee2e6; */
 }
 
 .page-link {
@@ -12448,13 +12448,58 @@ footer.footer {
 	height: 42px;
 }
 
+.img-refill-depot {
+	border-radius: 1.255rem;
+	width: 100%;
+	height: 300px;
+}
+
+.img-refill-depot-detail {
+	border-radius: .5rem;
+	width: 64px;
+	height: 64px;
+	opacity: 0.5;
+}
+
+.img-refill-depot-detail:hover {
+	opacity: 1;
+}
+
+.img-refill-depot-detail.active {
+	opacity: 1;
+}
+
+.btn-contact {
+	width: 80%;
+}
+
+.img-search-empty {
+	width: 100%;
+}
+.location-refill-depot{
+	border-radius: 1.255rem;
+	height: 200px;
+}
+
 @media screen and (max-width: 900px) {
+	.img-depot {
+		width: 100%;
+		height: auto;
+		transform: scale(.95);
+		border-radius: 0.5rem;
+		transition: transform .3s;
+	}
+
 	.image-usephone {
 		height: 100px;
 	}
 
 	.form-nav-search {
 		min-width: 400px;
+	}
+
+	.btn-contact {
+		width: 100%;
 	}
 
 }
@@ -12501,4 +12546,8 @@ footer.footer {
 
 .min-height-80 {
 	min-height: 700px;
+}
+
+.text-word-wrap {
+	word-wrap: break-word;
 }
