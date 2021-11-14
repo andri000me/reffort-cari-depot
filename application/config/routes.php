@@ -69,15 +69,14 @@ $route['api/customers/refill-depot/nearby/(:any)/(:any)'] = 'customers/api/refil
 // partners
 $route['partners/register'] = 'partners/registercontroller/index';
 $route['partners/dashboard'] = 'partners/dashboardcontroller/index';
-$route['partners/license_document'] = 'partners/LicenseDocumentController/index';
+$route['partners/upload-license'] = 'partners/uploadlicensecontroller/index';
 $route['partners/login'] = 'partners/logincontroller/index';
 $route['partners/auth/login'] = 'partners/authcontroller/login';
 $route['partners/auth/logout'] = 'partners/authcontroller/logout';
 $route['partners/register'] = 'partners/registercontroller/index';
 $route['partners/auth/register'] = 'partners/authcontroller/register';
 $route['partners/profile'] = 'partners/profilecontroller/index';
-$route['partners/license'] = 'partners/licensedocumentcontroller/index';
-$route['partners/edit'] = 'partners/editgallerycontroller/index';
+$route['partners/gallery'] = 'partners/gallerycontroller/index';
 
 // admins
 $route['admins/login'] = 'admins/logincontroller/index';
