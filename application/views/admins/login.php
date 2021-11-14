@@ -14,10 +14,10 @@
 			<div class="row mb-5 align-items-end">
 				<div class="col">
 					<b class="h3">
-						Admin-Login
+						Admin Login
 					</b>
 				</div>
-			
+
 			</div>
 			<div class="mb-5">
 				<?php 
@@ -28,16 +28,7 @@
 					echo '</div>';
 				}
 				?>
-
-				<?php 
-				if($this->session->flashdata('success') !='')
-				{
-					echo '<div class="alert alert-info" role="alert">';
-					echo $this->session->flashdata('success');
-					echo '</div>';
-				}
-				?>
-				<form method="post" action="<?=base_url()?>admins/login">
+				<form method="post" action="<?=base_url()?>admins/aut/login">
 					<div class="mb-3">
 						<label for="email" class="form-label">Email Address</label>
 						<input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">

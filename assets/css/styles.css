@@ -12589,3 +12589,7 @@ footer.footer {
 	width: 100%;
 
 }
+
+.page-link:hover {
+	cursor: pointer;
+}

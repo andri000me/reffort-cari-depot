@@ -8,7 +8,8 @@ class Auth extends CI_Model
             'email' => $email,
             'password' => password_hash($password, PASSWORD_DEFAULT),
             'name' => $depot_name,
-            'phone_number' => $phone_number
+            'phone_number' => $phone_number,
+            'status' => "fresh",
         );
 
         $this->db->insert('partners', $data);
@@ -26,6 +27,8 @@ class Auth extends CI_Model
                 $this->session->set_userdata('partners_id', $data->id);
                 $this->session->set_userdata('partners_email', $email);
                 $this->session->set_userdata('partners_name', $data->name);
+
+                $this->session->set_flashdata('status', $data->status);
 
                 return TRUE;
             } else {

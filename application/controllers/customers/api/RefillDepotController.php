@@ -41,13 +41,13 @@ class RefillDepotController extends CI_Controller {
 		$i = 0;
 		foreach($partners as $partner){
 
-			$thumbnails = $this->partnergallery->show_thumbnail($partner->id)->result();
+			$thumbnails = $this->partnergallery->show_thumbnail($partner->id)->row();
 
 			$data[$i] = array(
 				'id' => $partner->id,
 				'name' => $partner->name,
 				'icon' => $partner->icon,
-				'thumbnail' => $thumbnails,
+				'thumbnail' => $thumbnails->source,
 				'highlight' => $partner->highlight,
 				'latitude' => $partner->latitude,
 				'longitude' => $partner->longitude,
@@ -83,13 +83,13 @@ class RefillDepotController extends CI_Controller {
 		$i = 0;
 		foreach($partners as $partner){
 
-			$thumbnails = $this->partnergallery->show_thumbnail($partner->id)->result();
-
+			$thumbnails = $this->partnergallery->show_thumbnail($partner->id)->row();
+			
 			$data[$i] = array(
 				'id' => $partner->id,
 				'name' => $partner->name,
 				'icon' => $partner->icon,
-				'thumbnail' => $thumbnails,
+				'thumbnail' => $thumbnails->source,
 				'highlight' => $partner->highlight,
 				'latitude' => $partner->latitude,
 				'longitude' => $partner->longitude,

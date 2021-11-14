@@ -1,6 +1,3 @@
-<?php
-$this->load->view("layouts/partners.header.php")
-?>
 <div class="container min-height-80 py-4">
 	<div class="row">
 		<div class="col-xl-12 mt-4 mb-4">
@@ -136,7 +133,3 @@ $this->load->view("layouts/partners.header.php")
 	}
 
 </script>
-
-<?php
-$this->load->view("layouts/partners.footer.php")
-?>
