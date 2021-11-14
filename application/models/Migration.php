@@ -26,13 +26,14 @@ class Migration extends CI_Model
 	function partners(){
 
 	$this->db->query("TRUNCATE TABLE partners");
+
 		for($i = 0; $i < 20; $i++){
 			$lat = "-6.1".rand(777777, 999999) ;
 			$lng = "106.8".rand(111111, 555555);
-			$name = $this->generateRandomConsonan().$this->generateRandomVocal().$this->generateRandomConsonan().$this->generateRandomVocal().$this->generateRandomConsonan();
+			$name = "Partner ".($i+1);
 
 			$query = "INSERT INTO partners(name, email, password, phone_number, icon, highlight, description, latitude, longitude, address, created_at
-			) VALUES('{$name} Depot', 'depot{$i}@gmail.com', '".password_hash("12345678",PASSWORD_DEFAULT)."', '08000000{$i}',
+			) VALUES('{$name} Depot', 'depot".($i+1)."@gmail.com', '".password_hash("12345678",PASSWORD_DEFAULT)."', '08000000{$i}',
 			'assets/images/resource/retail-icon.png', 'Refill Depot', '<p>Lorem Ipsum is simply dummy text of the printing and
 				typesetting industry.</p>', '{$lat}',
 			'$lng', 'Jl. XXXXXX', '".date('Y-m-d H:i:s')."'

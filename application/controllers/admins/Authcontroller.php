@@ -56,6 +56,6 @@ function __construct()
 	{
 		$this->session->unset_userdata('email');
 
-		redirect('admins/login');
+		redirect('home');
 	}
 }

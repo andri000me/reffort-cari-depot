@@ -123,7 +123,10 @@ $this->load->view("layouts/customers.header.php")
 
 								foreach($partner_schedules_today as $schedule){
 							?>
-							<div class="small text-muted mb-4"> <?=$schedule->day?> | Open at
+							<div class="small text-muted mb-4"> 
+								<?=$schedule->day?> 
+								<span class="ms-2 me-2">&#183;</span> 
+								Open at
 								<?=date_format(date_create($schedule->open_time),'H:i')?> -
 								<?=date_format(date_create($schedule->close_time),'H:i')?>
 							</div>

@@ -12476,9 +12476,15 @@ footer.footer {
 .img-search-empty {
 	width: 100%;
 }
-.location-refill-depot{
+
+.location-refill-depot {
 	border-radius: 1.255rem;
 	height: 200px;
+}
+
+.location-profile {
+	border-radius: 1.255rem;
+	height: 500px;
 }
 
 @media screen and (max-width: 900px) {
@@ -12550,4 +12556,36 @@ footer.footer {
 
 .text-word-wrap {
 	word-wrap: break-word;
+}
+
+.input-time {
+	max-width: 150px;
+}
+
+.image-gallery {
+	border-radius: 1rem;
+	width: 100%;
+}
+
+.btn-service {
+	border: 1px solid #D8E0E9;
+	padding: 10px;
+	border-radius: 0.5rem;
+	cursor: pointer
+}
+
+.btn-service:hover {
+	border: 1px solid #0d6efd;
+	background-color: #F6FAFF;
+}
+
+.service-selected {
+	position: absolute;
+	margin-left: -15px;
+}
+
+.profile-avatar {
+	border-radius: 50%;
+	width: 100%;
+
 }

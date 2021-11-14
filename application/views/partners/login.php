@@ -12,10 +12,10 @@ $this->load->view("layouts/auth.header.php")
 			</div>
 		</div>
 
-		<div class="col"> 
+		<div class="col">
 			<div class="mb-5">
 				<img class="rounded" src="<?= base_url(); ?>assets/images/resource/partners.png" alt="" width="300px">
-			</div> 
+			</div>
 		</div>
 
 		<div class="col-lg-4">
@@ -55,6 +55,7 @@ $this->load->view("layouts/auth.header.php")
 			</div>
 		</div>
 	</div>
-	<?php
+</div>
+<?php
 	$this->load->view("layouts/auth.footer.php")
-	?>
+?>

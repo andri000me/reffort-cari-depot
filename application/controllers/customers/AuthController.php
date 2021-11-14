@@ -62,6 +62,6 @@ class AuthController extends CI_Controller
 		$this->session->unset_userdata('customers_email');
 		$this->session->unset_userdata('customers_name');
 
-		redirect('customers/home');
+		redirect('');
 	}
 }
