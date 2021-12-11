@@ -36,7 +36,7 @@
 			</div>
 			<div class="card">
 				<div class="card-body">
-					<img src="<?= base_url() ?>assets/images/license/license-sample.svg" alt="" width="600px">
+					<img src="<?= base_url() ?>assets/images/license/license-sample.svg" alt="" width="100%">
 				</div>
 			</div>
 		</div>

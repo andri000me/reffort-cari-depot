@@ -12,7 +12,4 @@ class RegisterController extends CI_Controller
 	{
 		$this->load->view('partners/register.php');
 	}
-	public function step_completed(){
-		$this->load->view('partners/step_completed.php');
-	}
 }

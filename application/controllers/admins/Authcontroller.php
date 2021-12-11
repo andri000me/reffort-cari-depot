@@ -20,12 +20,12 @@ class AuthController extends CI_Controller {
  
 			if($this->auth->login($email,$password))
 			{
-				redirect('admins/login');
+				redirect('admins/dashboard');
 			}
 			else
 			{
 				$this->session->set_flashdata('error','Email  and Password do not match!');
-				redirect('Admins/login');
+				redirect('admins/login');
 			}
 		}
 		
@@ -33,8 +33,10 @@ class AuthController extends CI_Controller {
 
 	public function logout()
 	{
-		$this->session->unset_userdata('email');
+		$this->session->unset_userdata('admins_id');
+		$this->session->unset_userdata('admins_email');
+		$this->session->unset_userdata('admins_name');
 
-		redirect('home');
+		redirect('admins/login');
 	}
 }

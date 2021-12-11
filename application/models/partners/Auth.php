@@ -10,6 +10,7 @@ class Auth extends CI_Model
             'name' => $depot_name,
             'phone_number' => $phone_number,
             'status' => "fresh",
+            'icon'=>'assets/images/resource/retail-icon.png'
         );
 
         $this->db->insert('partners', $data);

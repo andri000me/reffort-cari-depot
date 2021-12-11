@@ -45,6 +45,7 @@ class Partner extends CI_Model
 
 		return $this->db->query($query);
 	}
+	
     function show_detail($id){
 
 		$query = "SELECT

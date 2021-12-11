@@ -70,7 +70,7 @@ $this->load->view("layouts/customers.header.php")
 							<?php
 										}else{
 											?>
-											<iframe class="img-refill-depot <?=$index==0 ? '' : 'd-none'?>" src="<?=$gallery->source?>"
+							<iframe class="img-refill-depot <?=$index==0 ? '' : 'd-none'?>" src="<?=$gallery->source?>"
 								title="YouTube video player" frameborder="0"
 								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 								allowfullscreen id="gallery-<?=$gallery->id?>"></iframe>
@@ -123,9 +123,9 @@ $this->load->view("layouts/customers.header.php")
 
 								foreach($partner_schedules_today as $schedule){
 							?>
-							<div class="small text-muted mb-4"> 
-								<?=$schedule->day?> 
-								<span class="ms-2 me-2">&#183;</span> 
+							<div class="small text-muted mb-4">
+								<?=$schedule->day?>
+								<span class="ms-2 me-2">&#183;</span>
 								Open at
 								<?=date_format(date_create($schedule->open_time),'H:i')?> -
 								<?=date_format(date_create($schedule->close_time),'H:i')?>
@@ -181,7 +181,8 @@ $this->load->view("layouts/customers.header.php")
 									foreach($partner_contacts as $contact){
 								?>
 								<div class="mt-2">
-									<a href="<?=$contact->action.$contact->contact?>" class="btn btn-primary btn-contact ">
+									<a href="<?=$contact->action.$contact->contact?>"
+										class="btn btn-primary btn-contact ">
 										<div class="row">
 											<div class="col-auto">
 												<i class="<?=$contact->icon?> fa-fw"></i>
@@ -189,7 +190,7 @@ $this->load->view("layouts/customers.header.php")
 											<div class="col-auto">
 												<?=$contact->type?> :
 											</div>
-											<div class="col text-end">
+											<div class="col text-end text-lowercase">
 												<?=$contact->contact?>
 											</div>
 										</div>
@@ -269,6 +270,7 @@ $this->load->view("layouts/customers.header.php")
 		$(btn_id).addClass('active')
 		$(gallery_id).removeClass('d-none')
 	}
+
 	function getLocation() {
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(showPosition);
@@ -278,11 +280,13 @@ $this->load->view("layouts/customers.header.php")
 	}
 	var cur_lat = null;
 	var cur_lng = null;
+
 	function showPosition(position) {
 		cur_lat = position.coords.latitude;
-		cur_lng=  position.coords.longitude; 
-		$("#distance-location").html(getDistanceFromLatLonInKm(cur_lat, cur_lng, <?=$partner->latitude?>, <?=$partner->longitude?>).toFixed(2)+" Km")
+		cur_lng = position.coords.longitude;
+		$("#distance-location").html(getDistanceFromLatLonInKm(cur_lat, cur_lng, <?= $partner->latitude ?> , <?= $partner->longitude ?> ).toFixed(2) + " Km")
 	}
+
 	function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
 		var R = 6371; // Radius of the earth in km
 		var dLat = deg2rad(lat2 - lat1); // deg2rad below
@@ -305,9 +309,9 @@ $this->load->view("layouts/customers.header.php")
 		iconUrl: '<?=base_url()?>assets/images/resource/location-icon.svg',
 		iconSize: [40, 40],
 	});
- 
 
-	var mymap = L.map('mapid').setView([<?=$maps_location?>], 15);
+
+	var mymap = L.map('mapid').setView([ <?=$maps_location?> ], 15);
 
 	L.tileLayer(
 		'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
@@ -320,7 +324,7 @@ $this->load->view("layouts/customers.header.php")
 		}).addTo(mymap);
 
 
-	L.marker([<?=$maps_location?>], {
+	L.marker([ <?=$maps_location?> ], {
 		icon: parkingLocationIcon
 	}).addTo(mymap)
 

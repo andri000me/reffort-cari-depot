@@ -79,7 +79,7 @@ class Migration extends CI_Model
 
 	$this->db->query("TRUNCATE TABLE partner_licenses");
 
-		for($i = 1; $i < 20; $i++){
+		for($i = 1; $i <= 20; $i++){
 			$status=array("registered","approved","rejected");
 
 			$query = "INSERT INTO partner_licenses(id_partner, source, start_date, end_date, status, created_at
@@ -96,7 +96,7 @@ class Migration extends CI_Model
 
 	$this->db->query("TRUNCATE TABLE partner_gallerys");
 
-		for($i = 1; $i < 20; $i++){
+		for($i = 1; $i <= 20; $i++){
 			$query = "INSERT INTO partner_gallerys(id_partner, source, type, created_at
 			) VALUES('{$i}', 'assets/images/depot/".rand(1,9).".jpg', 'foto', '".date('Y-m-d H:i:s')."'
 			)";
@@ -120,7 +120,7 @@ class Migration extends CI_Model
 
 	$this->db->query("TRUNCATE TABLE partner_schedules");
 
-		for($i = 1; $i < 20; $i++){
+		for($i = 1; $i <= 20; $i++){
 			for($j = 1; $j <= 7; $j++){
 				$query = "INSERT INTO partner_schedules(id_partner, id_schedule_day, open_time, close_time, created_at
 				) VALUES('{$i}', '{$j}', '08:00:00', '15:00:00', '".date('Y-m-d H:i:s')."'
@@ -134,7 +134,7 @@ class Migration extends CI_Model
 
 		$this->db->query("TRUNCATE TABLE partner_contacts");
 
-		for($i = 1; $i < 20; $i++){
+		for($i = 1; $i <= 20; $i++){
 
 			$query = "INSERT INTO partner_contacts(id_partner, id_contact, contact, created_at
 			) VALUES('{$i}', '1', '08".rand(123,999).rand(1111,9999).rand(1111,9999)."', '".date('Y-m-d H:i:s')."'

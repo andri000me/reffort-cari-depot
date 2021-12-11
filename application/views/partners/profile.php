@@ -6,73 +6,90 @@
 			</div>
 			<div class="card">
 				<div class="card-body">
-					<div class="row">
-						<div class="col-sm-8">
-							<div class="mb-3">
-								<label for="name" class="form-label">Refill Depot Name</label>
-								<input type="text" class="form-control" id="name" name="name">
-							</div>
-							<div class="mb-3">
-								<label for="highlight" class="form-label">Highlight</label>
-								<input type="highlight" class="form-control" id="highlight" name="highlight">
-							</div>
-							<div class="mb-3">
-								<label for="description" class="form-label">Description / Branding</label>
-								<textarea class="form-control" id="exampleFormControlTextarea1" rows="9"></textarea>
-							</div>
-							<div class="mb-3">
-								<label for="name" class="form-label">Refill Service</label>
-								<div class="row small">
-									<div class="col-auto">
-										<div class="btn-service">
-											<div class="text-center">
-												<img src="<?= base_url() ?>assets/images/icon-refill/mineral-water.svg"
-													alt="" width="100px">
-											</div>
-											<div class="form-check mt-3">
-												<input class=" form-check-input" type="checkbox" value=""
-													id="flexCheckDefault">
-												<label class="form-check-label" for="flexCheckDefault">
-													Mineral Water
-												</label>
-											</div>
+					<form action="<?=base_url()?>partners/profile/update" method="POST">
+						<div class="row">
+							<div class="col-sm-8">
+								<div class="mb-3">
+									<label for="name" class="form-label">Refill Depot Name</label>
+									<input type="text" class="form-control" id="name" name="name"
+										value="<?=$partners->name?>">
+								</div>
+								<div class="mb-3">
+									<label for="highlight" class="form-label">Highlight</label>
+									<input type="highlight" class="form-control" id="highlight" name="highlight"
+										value="<?=$partners->highlight?>">
+								</div>
+								<div class="mb-3">
+									<label for="description" class="form-label">Description / Branding</label>
+									<textarea class="form-control" id="description" name="description"
+										rows="9"><?=$partners->description?></textarea>
+								</div>
+								<div class="mb-3">
+									<label for="name" class="form-label">Refill Service</label>
+									<div class="row small">
+										<?php
+										foreach($services as $service){ 
+									?>
+										<div class="col-auto p-1">
+											<label for="service-<?=$service->id?>" id="label-service-<?=$service->id?>"
+												class="text-center btn-service h-100"
+												onclick="changeActive('#service-<?=$service->id?>', '#label-service-<?=$service->id?>')">
+												<img src="<?= base_url().$service->icon ?>" alt="" width="100px">
+												<div class="mt-3">
+													<?=$service->name?>
+												</div>
+												<input class="d-none" type="checkbox" value="<?=$service->id?>"
+													id="service-<?=$service->id?>">
+											</label>
 										</div>
+										<?php
+										}
+									?>
+									</div>
+								</div>
+								<div class="mb-3">
+									<label class="form-label mt-3 mb-3">Contact Info</label>
+									<?php
+									foreach($contacts as $contact){ 
+								?>
+									<div class="input-group mb-3 mt-3">
+										<span class="input-group-text label-contact" id="inputGroup-sizing-default">
+											<i class="<?=$contact->icon?> me-2"></i>
+											<?=$contact->type?>
+										</span>
+										<input type="text" class="form-control" name="contact[<?=$contact->type?>]">
+									</div>
+									<?php
+									}
+								?>
+								</div>
+								<div class="mb-3">
+									<label class="form-label mt-3 mb-3">Pin Location</label>
+									<div id="mapid" class="location-profile"></div>
+									<input type="text" name="latitude" id="latitude" value="<?=$partners->latitude?>">
+									<input type="text" name="longitude" id="longitude"
+										value="<?=$partners->longitude?>">
+								</div>
+								<div class="mb-3">
+									<label class="form-label">Detail Address</label>
+									<textarea class="form-control" name="address"
+										rows="2"><?=$partners->address?></textarea>
+								</div>
+								<div class="mt-5">
+									<div class="d-grid gap-2">
+										<button type="submit" class="btn btn-primary">Save Profile</button>
 									</div>
 								</div>
 							</div>
-							<div class="mb-3">
-								<label class="form-label">Contact Info</label>
-								<div class="input-group mb-3">
-									<select class="form-select" aria-label="Default select example">
-										<option selected>Phone Number</option>
-										<option value="1">Telephone</option>
-									</select>
-									<input type="text" class="form-control" id="phone_number" name="phone_number">
+							<div class="col-sm-4 text-center">
+								<img src="<?= base_url().$partners->icon ?>" alt="" class="profile-avatar">
+								<div class="mt-3">
+									<button type="button" class="btn btn-primary">Change Avatar</button>
 								</div>
-							</div>
-							<div class="mb-3">
-								<label class="form-label">Pin Location</label>
-								<div id="mapid" class="location-profile"></div>
-							</div>
-							<div class="mb-3">
-								<label class="form-label">Detail Address</label>
-								<textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
-							</div>
-							<div class="mt-5">
-								<div class="d-grid gap-2">
-									<button type="submit" class="btn btn-primary">Save Profile</button>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-4 text-center">
-							<img src="<?= base_url() ?>assets/images/resource/retail-icon.png" alt=""
-								class="profile-avatar">
-							<div class="mt-3">
-								<button type="submit" class="btn btn-primary">Change Avatar</button>
-							</div>
 
+							</div>
 						</div>
-					</div>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -83,9 +100,18 @@
 		getLocation()
 	});
 
+	function changeActive(input, label) {
+
+		var checked = $(input).is(":checked")
+		if (checked) {
+			$(label).addClass("active")
+		} else {
+			$(label).removeClass("active")
+		}
+	}
 	var markLocationIcon = L.icon({
 		iconUrl: '<?=base_url()?>assets/images/resource/location-icon.svg',
-		iconSize: [40, 40],
+		iconSize: [60, 60],
 	});
 
 	function getLocation() {
@@ -98,9 +124,15 @@
 	var cur_lat = null;
 	var cur_lng = null;
 
+	var before_lat = $("#latitude").val();
+	var before_lng = $("#longitude").val();
+
 	function showPosition(position) {
-		cur_lat = position.coords.latitude;
-		cur_lng = position.coords.longitude;
+		cur_lat = (before_lat == "") ? position.coords.latitude : before_lat;
+		cur_lng = (before_lng == "") ? position.coords.longitude : before_lng;
+
+		$("#latitude").val(cur_lat);
+		$("#longitude").val(cur_lng);
 
 		var mymap = L.map('mapid').setView([cur_lat, cur_lng], 18);
 
@@ -127,6 +159,9 @@
 			marker = L.marker([e.latlng.lat, e.latlng.lng], {
 				icon: markLocationIcon
 			}).addTo(mymap)
+
+			$("#latitude").val(e.latlng.lat)
+			$("#longitude").val(e.latlng.lng)
 		}
 
 		mymap.on('click', onMapClick);
