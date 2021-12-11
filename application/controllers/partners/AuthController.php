@@ -43,7 +43,12 @@ class AuthController extends CI_Controller
 			$password = $this->input->post('password');
 
 			if ($this->auth->login($email, $password)) {
-				redirect('partners/dashboard');
+				$status = $this->session->flashdata('status');
+				if ($status != 'registered' || $status != "actived") {
+					redirect('partners/step-completed');
+				}else{
+					redirect('partners/dashboard');
+				}
 			} else {
 				$this->session->set_flashdata('error', 'Username and Password do not match!');
 				redirect('partners/login');

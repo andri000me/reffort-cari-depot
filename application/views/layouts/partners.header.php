@@ -72,14 +72,8 @@ $uri_1 = $this->uri->segment(1);
 					</li>
 					<li class="nav-item">
 						<a class="nav-link ms-2 me-2 <?= $uri_1 == 'profile' ? 'active' : '' ?>"
-							href="<?= base_url() ?>partners/profile">
-							Profile
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link ms-2 me-2 <?= $uri_1 == 'gallery' ? 'active' : '' ?>"
-							href="<?= base_url() ?>partners/gallery">
-							Gallery
+							href="<?= base_url() ?>partners/settings">
+							Settings
 						</a>
 					</li>
 					<li class="nav-item ms-2">

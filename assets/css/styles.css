@@ -37,7 +37,7 @@
 	--bs-primary: #0d6efd;
 	--bs-secondary: #6c757d;
 	--bs-success: #198754;
-	--bs-info: #0dcaf0;
+	--bs-info: #00a3d5;
 	--bs-warning: #ffc107;
 	--bs-danger: #dc3545;
 	--bs-light: #f8f9fa;
@@ -12571,10 +12571,16 @@ footer.footer {
 	border: 1px solid #D8E0E9;
 	padding: 10px;
 	border-radius: 0.5rem;
-	cursor: pointer
+	cursor: pointer;
+	width: 200px;
 }
 
 .btn-service:hover {
+	border: 1px solid #0d6efd;
+	background-color: #F6FAFF;
+}
+.btn-service.active {
+	color:#0d6efd;
 	border: 1px solid #0d6efd;
 	background-color: #F6FAFF;
 }
@@ -12588,4 +12594,24 @@ footer.footer {
 	border-radius: 50%;
 	width: 100%;
 
+}
+
+.page-link:hover {
+	cursor: pointer;
+}
+
+.icon-dashboard i {
+	font-size: 3rem;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.card-dashboard-link {
+	text-decoration: none;
+}
+
+.card-dashboard-link:hover {
+	text-decoration: none;
+}
+.label-contact{
+	width: 140px;
 }

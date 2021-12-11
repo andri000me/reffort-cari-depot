@@ -68,7 +68,8 @@
 		getLocation()
 
 	});
-	function filterService(){
+
+	function filterService() {
 		page = 0;
 		getDataRefillDepot()
 	}
@@ -97,7 +98,7 @@
 		window.scrollTo(0, 0);
 
 		var list_refill_depot = "";
-		
+
 		service = $("#service").val();
 		search = $("#search").val();
 
@@ -126,7 +127,7 @@
 									</div>
 								</div>
 								<div class="card-body p-0">
-									<img src="<?=base_url()?>` + item.thumbnail[0].source + `" alt="" class="img-depot">
+									<img src="<?=base_url()?>` + item.thumbnail + `" alt="" class="img-depot">
 								</div>
 							</a>
 							<div class="card-body">

@@ -67,21 +67,27 @@ $route['api/customers/refill-depot'] = 'customers/api/refilldepotcontroller/show
 $route['api/customers/refill-depot/nearby/(:any)/(:any)'] = 'customers/api/refilldepotcontroller/show_nearby/$1/$2';
 
 // partners
-$route['partners/register'] = 'partners/registercontroller/index';
-$route['partners/dashboard'] = 'partners/dashboardcontroller/index';
-$route['partners/upload-license'] = 'partners/uploadlicensecontroller/index';
 $route['partners/login'] = 'partners/logincontroller/index';
+$route['partners/register'] = 'partners/registercontroller/index';
 $route['partners/auth/login'] = 'partners/authcontroller/login';
 $route['partners/auth/logout'] = 'partners/authcontroller/logout';
-$route['partners/register'] = 'partners/registercontroller/index';
 $route['partners/auth/register'] = 'partners/authcontroller/register';
+$route['partners/'] = 'partners/dashboardcontroller/index';
+$route['partners/dashboard'] = 'partners/dashboardcontroller/index';
+$route['partners/upload-license'] = 'partners/uploadlicensecontroller/index';
+$route['partners/step-completed'] = 'partners/settingscontroller/step_completed';
+$route['partners/settings'] = 'partners/settingscontroller/index';
 $route['partners/profile'] = 'partners/profilecontroller/index';
+$route['partners/profile/update'] = 'partners/profilecontroller/update';
 $route['partners/gallery'] = 'partners/gallerycontroller/index';
 
 // admins
+$route['admins/'] = 'admins/dashboardcontroller/index';
 $route['admins/login'] = 'admins/logincontroller/index';
 $route['admins/auth/login'] = 'admins/authcontroller/login';
+$route['admins/auth/logout'] = 'admins/authcontroller/logout';
 $route['admins/dashboard'] = 'admins/dashboardcontroller/index';
+$route['admins/partners'] = 'admins/partnerscontroller/index';
 
 $route['migrate'] = 'migrationcontroller/migrate';
 $route['404_override'] = '';

@@ -1,6 +1,3 @@
-<?php
-$this->load->view("layouts/partners.header.php")
-?>
 <div class="container min-height-80 py-4">
 	<div class="row">
 		<div class="col-xl-6 mt-4 mb-4">
@@ -39,14 +36,9 @@ $this->load->view("layouts/partners.header.php")
 			</div>
 			<div class="card">
 				<div class="card-body">
-					<img src="<?= base_url() ?>assets/images/license/license-sample.svg" alt="" width="600px">
+					<img src="<?= base_url() ?>assets/images/license/license-sample.svg" alt="" width="100%">
 				</div>
 			</div>
 		</div>
 	</div>
-
 </div>
-</div>
-<?php
-$this->load->view("layouts/partners.footer.php")
-?>

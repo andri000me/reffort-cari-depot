@@ -1,6 +1,3 @@
-<?php
-$this->load->view("layouts/partners.header.php")
-?>
 <div class="container">
 	<div class="row">
 		<div class="col-xl-6 mt-4 mb-4">
@@ -65,9 +62,3 @@ $this->load->view("layouts/partners.header.php")
 		</div>
 	</div>
 </div>
-</div>
-</div>
-</div>
-<?php
-$this->load->view("layouts/partners.footer.php")
-?>
