@@ -4,6 +4,7 @@ class PartnerService extends CI_Model
     function show_detail($id){
 
 		$query = "SELECT
+		services.id,
 		services.`name`,
 		services.icon,
 		partner_services.`status`

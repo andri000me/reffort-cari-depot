@@ -1,5 +1,5 @@
 <?php
-$this->load->view("layouts/customers.header.php")
+$this->load->view("layouts/admin.header.php")
 ?>
 <div class="container min-height-80">
 	<?php
@@ -9,53 +9,9 @@ $this->load->view("layouts/customers.header.php")
 	?>
 	<div class="row">
 		<div class="col-xl-12 mt-4 mb-4">
-			<div class="card">
-				<div class="card-body">
-					<div class="row align-items-center">
-						<div class="col-auto">
-							<img src="<?= base_url().$partner->icon ?>" alt="" width="52px">
-						</div>
-						<div class="col-auto">
-							<b><?=$partner->name?></b>
-							<div class="small text-muted"><?=$partner->highlight?></div>
-						</div>
-						<div class="col">
-							<div class="row  justify-content-end">
-								<div class="col-auto ps-4">
-									<i class="fas fa-store fa-fw me-2 text-muted"></i>
-									<span class="small text-muted"><?=count($partner_services)?> Services</span>
-								</div>
-								<div class="col-auto ps-4">
-									<i class="fas fa-user-check fa-fw me-2 text-muted"></i>
-									<?php
-										foreach($partner_licenses as $license){	
-									?>
-									<span class="small text-muted
-										text-capitalize"><?=($license->status == "approved" ? "Verified" : $license->status) ?>
-									</span>
-									<?php } ?>
-								</div>
-								<div class="col-auto ps-4">
-									<i class="fas fa-map-marked-alt fa-fw me-2 text-muted"></i>
-									<span class="small text-muted" id="distance-location"></span>
-								</div>
-								<!-- <div class="col-auto ps-4">
-									<i class="fas fa-heart fa-fw me-2 text-muted"></i>
-									<?php
-										foreach($partner_likes as $like){	
-									?>
-									<span class="small text-muted"><?=$like->total_like?> Likes</span>
-									<?php } ?>
-								</div> -->
-							</div>
-						</div>
-					</div>
-				</div>
+			<div class="mb-4">
+				<h5>Partners Detail</h5>
 			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-xl-12 mb-4">
 			<div class="card">
 				<div class="card-body">
 					<div class="row">
@@ -212,45 +168,8 @@ $this->load->view("layouts/customers.header.php")
 									</p>
 								</div>
 							</div>
-
-							<!-- <div class="py-4">
-								<b>Schedule</b>
-								<div class="mt-2">
-									<table class="table text-muted small">
-										<thead class="bg-light">
-											<tr>
-												<th scope="col">Days</th>
-												<th scope="col">Open Time</th>
-												<th scope="col">Close Time</th>
-											</tr>
-										</thead>
-										<tbody>
-											<?php
-												foreach($partner_schedules as $schedule)
-												{
-													?>
-											<tr>
-												<th scope="row">
-													<?=$schedule->day?>
-												</th>
-												<td>
-													<?=$schedule->open_time?>
-												</td>
-												<td>
-													<?=$schedule->close_time?>
-												</td>
-											</tr>
-
-											<?php
-												}
-											?>
-										</tbody>
-									</table>
-								</div>
-							</div> -->
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</div>
@@ -330,5 +249,5 @@ $this->load->view("layouts/customers.header.php")
 
 </script>
 <?php
-$this->load->view("layouts/customers.footer.php")
+$this->load->view("layouts/admin.footer.php")
 ?>

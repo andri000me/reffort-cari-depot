@@ -82,12 +82,18 @@ $route['partners/profile/update'] = 'partners/profilecontroller/update';
 $route['partners/gallery'] = 'partners/gallerycontroller/index';
 
 // admins
-$route['admins/'] = 'admins/dashboardcontroller/index';
+$route['admins'] = 'admins/dashboardcontroller/index';
 $route['admins/login'] = 'admins/logincontroller/index';
 $route['admins/auth/login'] = 'admins/authcontroller/login';
 $route['admins/auth/logout'] = 'admins/authcontroller/logout';
-$route['admins/dashboard'] = 'admins/dashboardcontroller/index';
+// $route['admins/dashboard'] = 'admins/dashboardcontroller/index';
 $route['admins/partners'] = 'admins/partnerscontroller/index';
+$route['admins/partners/add'] = 'admins/partnerscontroller/add';
+$route['admins/partners/update'] = 'admins/partnerscontroller/update';
+$route['admins/partners/save/add'] = 'admins/partnerscontroller/save_add';
+$route['admins/partners/save/update'] = 'admins/partnerscontroller/save_update';
+$route['admins/partners/delete'] = 'admins/partnerscontroller/delete';
+$route['admins/partners/detail'] = 'admins/partnerscontroller/detail';
 
 $route['migrate'] = 'migrationcontroller/migrate';
 $route['404_override'] = '';

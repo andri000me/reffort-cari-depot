@@ -27,6 +27,29 @@ class Partner extends CI_Model
 		// exitt();
 		return $this->db->query($query);
 	}
+
+    function show_all(){
+
+		$query = "SELECT
+		partners.id,
+		partners.name,
+		partners.icon,
+		partners.highlight,
+		partners.latitude,
+		partners.longitude,
+		DATE_FORMAT(partners.created_at, '%d %M %Y') as created_at,
+		IFNULL(partner_total_likes.total_likes,0) as total_likes,
+		count(IFNULL(partner_services.id,0)) as total_services
+		FROM partners
+		LEFT JOIN partner_total_likes ON partner_total_likes.id_partner = partners.id
+		INNER JOIN partner_services ON partner_services.id_partner = partners.id
+		INNER JOIN services ON services.id = partner_services.id_service 
+		GROUP BY partners.id
+		";
+		// echo $query;
+		// exitt();
+		return $this->db->query($query);
+	}
     function show_total($search, $service){
 
 		$query = "SELECT
