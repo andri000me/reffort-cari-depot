@@ -1,3 +1,15 @@
+<?php
+
+function check_partners_service($id, $partner_services){
+	$status = false;
+	foreach($partner_services as $service){
+		if($service->id == $id){
+			$status = true;
+		}
+	}
+	return ($status ? "active" : "" );
+}
+?>
 <div class="container min-height-80 py-4">
 	<div class="row">
 		<div class="col-xl-12 mt-4 mb-4">
@@ -29,7 +41,8 @@
 									<div class="row small">
 										<?php
 										foreach($services as $service){ 
-									?>
+											
+										?>
 										<div class="col-auto p-1">
 											<label for="service-<?=$service->id?>" id="label-service-<?=$service->id?>"
 												class="text-center btn-service h-100"

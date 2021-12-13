@@ -70,12 +70,6 @@ $uri_1 = $this->uri->segment(1);
 			<div class="collapse navbar-collapse" id="navbarCollapse">
 				<ul class="navbar-nav ms-auto mb-2 mb-md-0">
 					<li class="nav-item">
-						<a class="nav-link ms-2 me-2 <?= $uri_1 == 'dashboard' ? 'active' : '' ?>"
-							href="<?= base_url() ?>admins/dashboard">
-							Dashboard
-						</a>
-					</li>
-					<li class="nav-item">
 						<a class="nav-link ms-2 me-2 <?= $uri_1 == 'partners' ? 'active' : '' ?>"
 							href="<?= base_url() ?>admins/partners">
 							Partners
@@ -85,18 +79,6 @@ $uri_1 = $this->uri->segment(1);
 						<a class="nav-link ms-2 me-2 <?= $uri_1 == 'users' ? 'active' : '' ?>"
 							href="<?= base_url() ?>admins/users">
 							Users
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link ms-2 me-2 <?= $uri_1 == 'services' ? 'active' : '' ?>"
-							href="<?= base_url() ?>admins/services">
-							Services
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link ms-2 me-2 <?= $uri_1 == 'banners' ? 'active' : '' ?>"
-							href="<?= base_url() ?>admins/banners">
-							Banners
 						</a>
 					</li>
 					<li class="nav-item ms-2">

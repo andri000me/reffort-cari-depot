@@ -12451,7 +12451,7 @@ footer.footer {
 .img-refill-depot {
 	border-radius: 1.255rem;
 	width: 100%;
-	height: 300px;
+	height: auto;
 }
 
 .img-refill-depot-detail {

@@ -91,10 +91,6 @@ $uri_1 = $this->uri->segment(1);
 						<a class="nav-link ms-2 me-2 <?=$uri_1 == '' ? 'active' : ''?>" href="<?=base_url()?>">Home</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link ms-2 me-2" aria-current="page" href="<?=base_url()?>partners/register">Join
-							Us Partner</a>
-					</li>
-					<li class="nav-item">
 						<a class="nav-link ms-2 me-2 <?=$uri_1 == 'help-center' ? 'active' : ''?>"
 							href="<?=base_url()?>help-center">Help Center</a>
 					</li>

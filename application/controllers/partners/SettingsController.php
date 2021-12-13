@@ -21,8 +21,16 @@ class SettingsController extends CI_Controller
 	}
 	public function index()
 	{
-		$this->load->view('partners/settings.php');
+        $data["services"] = $this->service->show()->result();
+        $data["contacts"] = $this->contact->show()->result();
+
+        $id = $this->session->userdata('partners_id');
+
+        $data["partners"] = $this->partner->show_detail($id)->row();
+
+		$this->load->view('partners/settings.php', $data);
 	}
+
 	public function step_completed(){
 
 
@@ -32,7 +40,10 @@ class SettingsController extends CI_Controller
         $id = $this->session->userdata('partners_id');
 
         $data["partners"] = $this->partner->show_detail($id)->row();
-
+        $data["partner_contacts"] = $this->partnercontact->show_detail($id)->result();
+        $data["partner_gallerys"] = $this->partnergallery->show_detail($id)->result();
+        $data["partner_services"] = $this->partnerservice->show_detail($id)->result();
+		
 		$this->load->view('partners/step_completed.php', $data);
 	}
 }

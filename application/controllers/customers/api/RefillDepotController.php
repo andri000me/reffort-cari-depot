@@ -89,7 +89,7 @@ class RefillDepotController extends CI_Controller {
 				'id' => $partner->id,
 				'name' => $partner->name,
 				'icon' => $partner->icon,
-				'thumbnail' => $thumbnails->sources,
+				'thumbnail' => $thumbnails->source,
 				'highlight' => $partner->highlight,
 				'latitude' => $partner->latitude,
 				'longitude' => $partner->longitude,

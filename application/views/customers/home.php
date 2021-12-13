@@ -98,22 +98,10 @@
 										</div>
 									</div>
 								</div>
-								<div class="card-body p-0">
+								<div class="card-body p-0 mb-2">
 									<img src="<?=base_url()?>` + item.thumbnail + `" alt="" class="img-depot">
 								</div>
-							</a>
-							<div class="card-body">
-								<div class="row align-items-center">
-									<div class="col-auto pe-0">
-										<a href="#">
-											<i class="fa-heart-like far fa-heart fa-fw fa-lg"></i>
-										</a>
-									</div>
-									<div class="col small text-muted">
-										` + (item.total_likes != 0 ? item.total_likes : '') + ` Like
-									</div>
-								</div>
-							</div>
+							</a> 
 						</div>
 					</div>`;
 				});

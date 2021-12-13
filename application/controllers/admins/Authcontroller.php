@@ -20,7 +20,7 @@ class AuthController extends CI_Controller {
  
 			if($this->auth->login($email,$password))
 			{
-				redirect('admins/dashboard');
+				redirect('admins/partners');
 			}
 			else
 			{

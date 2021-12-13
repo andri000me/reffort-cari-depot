@@ -103,16 +103,16 @@ class Migration extends CI_Model
 
 			$this->db->query($query);
 			
-			$query = "INSERT INTO partner_gallerys(id_partner, source, type, created_at
-			) VALUES('{$i}', 'assets/images/depot/".rand(1,9).".jpg', 'foto', '".date('Y-m-d H:i:s')."'
-			)";
+			// $query = "INSERT INTO partner_gallerys(id_partner, source, type, created_at
+			// ) VALUES('{$i}', 'assets/images/depot/".rand(1,9).".jpg', 'foto', '".date('Y-m-d H:i:s')."'
+			// )";
 
-			$this->db->query($query);
+			// $this->db->query($query);
 
-			$query = "INSERT INTO partner_gallerys(id_partner, source, type, created_at
-			) VALUES('{$i}', 'https://youtube.com/embed/Igju98RWYOc', 'video', '".date('Y-m-d H:i:s')."'
-			)";
-			$this->db->query($query);
+			// $query = "INSERT INTO partner_gallerys(id_partner, source, type, created_at
+			// ) VALUES('{$i}', 'https://youtube.com/embed/Igju98RWYOc', 'video', '".date('Y-m-d H:i:s')."'
+			// )";
+			// $this->db->query($query);
 		}
 		return true;
 	}
